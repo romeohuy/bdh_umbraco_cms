@@ -261,16 +261,16 @@
         position: absolute;
     }
 
-    .contact-inner{
+    .contact-inner {
         width: 33vw;
-        height: 430px;
-        top: 35px;
+        height: 462px;
+        top: 22px;
     }
     .contact-left, .contact-right{
         width: 53%;
         height: 100%;
         float: left;
-        padding : 2vw 1vw;
+        padding : 1vw 1vw;
     }
     .contact-right{
         width: 47%;
