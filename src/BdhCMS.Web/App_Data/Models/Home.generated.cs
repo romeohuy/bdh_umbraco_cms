@@ -199,6 +199,13 @@ namespace Umbraco.Web.PublishedModels
 		public string HomeAboutTitle => this.Value<string>("homeAboutTitle");
 
 		///<summary>
+		/// Home Slider Items
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("homeSliderItems")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SliderElement> HomeSliderItems => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.SliderElement>>("homeSliderItems");
+
+		///<summary>
 		/// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
