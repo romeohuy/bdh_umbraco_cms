@@ -1,0 +1,136 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url : String.Empty;
+}
+@section Header{
+    <link rel="stylesheet" href="@Url.Content("~/css/homepage.css")" />
+}
+@*<section class="section section--full-height background-image-full overlay overlay--dark section--content-center section--thick-border"
+         style="background-image: url('@backgroundImage')">
+    <div class="section__hero-content">
+        <h1>@Model.HeroHeader</h1>
+        <p class="section__description">@Model.HeroDescription</p>
+        @if (Model.HeroCtalink != null)
+        {
+            <a class="button button--border--solid" href="@Model.HeroCtalink.Url">
+                @Model.HeroCtacaption
+            </a>
+        }
+    </div>
+</section>
+<section class="section section">
+    @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
+</section>
+
+<section class="section section--themed">
+    <div class="container">
+        <div class="row">
+            <div class="ta-center">
+                <h2>@Model.FooterHeader</h2>
+                <p class="section__description mw-640 ma-h-auto">@Model.FooterDescription</p>
+                <a class="button button--border--light_solid" href="@Model.FooterCtalink.Url">
+                    @Model.FooterCtacaption
+                </a>
+            </div>
+        </div>
+    </div>
+</section>*@
+
+<div class="contact-now">
+    <div class="container clearfix">
+        <div class="message">@Model.HeroHeader</div>
+        <div class="button">
+            <a href="@Model.HeroCtalink">@Model.HeroCtacaption</a>
+        </div>
+    </div>
+</div>
+<div class="services clearfix">
+    @foreach (var item in Model.FeatureServiceContents)
+    {
+        <div class="col25">
+            <a href="@item.ActionRedirectUrl">
+                <img src="@item.CoverImageFeature.Url" alt="@item.FeatureName">
+                <div class="title">@item.FeatureName</div>
+            </a>
+            <p>@item.FeatureDetails</p>
+        </div>
+    }
+</div>
+<div class="introduction">
+    <div class="container clearfix">
+        <div class="content col50">
+            <h1>@Model.HomeAboutTitle</h1>
+            <div>@Html.Raw(Model.HomeAboutDetails)</div>
+        </div>
+        <div class="col50">
+            <img src="@Model.HomeAboutRightImage.Url">
+        </div>
+    </div>
+</div>
+    <?php require(dirname(__DIR__) . '/components/member-of.php'); ?>
+<div class="news">
+    <div class="container">
+        <h1>LATEST NEWS</h1>
+        <div class="clearfix">
+            @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
+        </div>
+    </div>
+</div>
+<div class="map">
+    <div class="map-inner">
+        <div id="map"></div>
+    </div>
+    <div class="contact container">
+        <div class="contact-inner clearfix">
+            <div class="contact-left">
+                <h1>@Model.FooterContactTitle</h1>
+                <ul>
+                    <li class="clearfix">
+                        <div>
+                            <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
+                        </div>
+                        <div><a href="tel:@Model.TopHeadPhoneNumber" class="link">@Model.TopHeadPhoneNumber</a></div>
+                    </li>
+                    <li class="clearfix">
+                        <div><img src="@Url.Content("~/images/svg/mobile.svg")" alt="Mobile"></div>
+                        <div><a href="tel:@Model.TopHeaderMobileNumber" class="link">@Model.TopHeaderMobileNumber</a></div>
+                    </li>
+                    <li class="clearfix">
+                        <div><img src="@Url.Content("~/images/svg/email.svg")" alt="Email"></div>
+                        <div><a href="mailto:@(Model.TopHeaderEmailAddress)" class="link">@Model.TopHeaderEmailAddress</a></div>
+                    </li>
+                    <li class="address clearfix">
+                        <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
+                        <div>@Model.HCmaddressTitle</div>
+                    </li>
+                    <li class="clearfix">
+                        <div>@Model.HCmfooterAddress</div>
+                    </li>
+                    <li class="address clearfix">
+                        <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
+                        <div>@Model.HaNoiAddressTitle</div>
+                    </li>
+                    <li class="clearfix">
+                        <div>@Model.HaNoiFooterAddress</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact-right">
+                <h1>SITE LINK</h1>
+                <ul>
+                    <li>One Stop Solution</li>
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a href="/services">Our Services</a></li>
+                    <li><a href="/services/accounting"><span>Accounting</span></a></li>
+                    <li><a href="/services/hr-payroll"><span>HR & Payroll</span></a></li>
+                    <li><a href="/services/taxation"><span>Taxation</span></a></li>
+                    <li><a href="/services/investment-finance"><span>Investment & Finance</span></a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

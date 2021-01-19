@@ -1,0 +1,283 @@
+.col50, .col25{
+    width: 100%;
+}
+
+.col25{
+    text-align: center;
+}
+
+.services{
+    max-width: calc(1400px - 4.5vw);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services .col33{
+    position: relative;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: normal;
+}
+
+.services p{
+    margin-bottom: 20px;
+    padding: 0 3vw;
+}
+
+.services .title{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.services span{
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+}
+
+.introduction{
+    background-color: #EBEBEB;
+    padding: 20px 0;
+}
+
+.content{
+    padding-right: 30px;
+}
+
+.content p{
+    padding: 10px 0;
+}
+
+.content h3{
+    padding-top: 10px;
+}
+
+.content h4{
+    margin : 5px 0;
+}
+
+.content ul li{
+    padding: 5px 0;
+    position: relative;
+}
+
+.content ul li div{
+    margin-left: 30px;
+}
+
+.content ul li span{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.content ul li:before {
+    content: "\f111";
+    font-family: Awesome;
+    display: inline-block;
+    width: 0.4em;
+    color: #f78312;
+    font-size: 7px;
+    position: absolute;
+    top: 35%;
+    margin-left: 10px;
+}
+
+.news{
+    background-image: url("/images/newsback.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000;
+    padding: 3vw 0;
+}
+
+.news h1{
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.news h2{
+    width: 100%;
+    border-bottom: solid 1px #000;
+}
+
+.news .description{
+    padding: 30px;
+    background-color: #fff;
+}
+
+.news p{
+    padding: 10px 0;
+}
+
+.news a{
+    color: #f78312;
+}
+
+.span-left{
+    left: 20px;
+    bottom: 20px;
+    color: #fff;
+}
+
+.span-right{
+    right: 50px;
+    top: 40%;
+    color: #000;
+    text-align: right;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+.member{
+    background: #fff;
+}
+
+.map{
+    position: relative;
+}
+
+.map-inner{
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+#map{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.contact{
+    z-index: 99999;
+    position: relative;
+}
+
+.contact.container{
+    padding: 0;
+}
+
+.contact-inner{
+    background-color: rgba(0,0,0,0.9);
+     color: #fff;
+}
+
+.contact-inner h1{
+    padding: 20px 0;
+    font-size: 40px;
+}
+
+.contact-inner li img {
+    height: 18px;
+    width: auto;
+    display: inline-block;    
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.contact-left, .contact-right{
+    width: 100%;
+    padding : 3vw;
+    line-height: 25px;
+}
+
+.contact-left li div{
+    float: left;
+}
+
+.contact-inner ul li{
+    line-height: 25px;
+}
+.contact-right span{
+    padding-left: 30px;
+}
+
+.contact-inner a{
+    color: #fff;
+}
+
+.contact-left .address{
+    padding-top: 20px;
+}
+
+@media only screen and (min-width:980px) {
+    .contact-now{
+        text-align: unset;
+        padding: 0;
+    }
+
+    .contact-now .button{
+        float: right;
+    }
+
+    .contact-now .title{
+        float: left;
+        line-height: 110px;
+    }
+
+    .col25{
+        width: 25%;
+        float: left;
+    }
+
+    .col50{
+        width: 50%;
+        float: left;
+    }
+
+    .services{
+        padding: 3vw 0;
+    }
+
+    .services p{
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .services .col25{
+        padding: 0 0.75vw;
+    }
+
+    .introduction{
+        padding: 70px 0;
+    }
+
+    .contact.container{
+        padding: 0 3vw;
+    }
+
+    .contact-inner{
+        position: absolute;
+    }
+
+    .map{
+        height: 500px;
+    }
+
+    .map-inner{
+        position: absolute;
+    }
+
+    .contact-inner{
+        width: 33vw;
+        height: 430px;
+        top: 35px;
+    }
+    .contact-left, .contact-right{
+        width: 53%;
+        height: 100%;
+        float: left;
+        padding : 2vw 1vw;
+    }
+    .contact-right{
+        width: 47%;
+    }
+    .news .col50
+    {
+        padding-right: 20px;
+    }
+}
+

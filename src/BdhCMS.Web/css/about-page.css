@@ -1,0 +1,67 @@
+#main-nav >li:nth-child(2) >a{
+    color: #f78312;
+}
+
+.introduction div{
+    width: 100%;
+    padding: 50px 0;
+}
+
+.introduction p{
+    padding: 10px 0;
+}
+
+.team-members{
+    padding-top: 20px;
+    padding-bottom: 70px;
+}
+
+.team-members .title{
+    width: 100%;
+}
+
+.team-members .title-outer{
+    width: 100%;
+}
+
+.team-members h1{
+    padding-top: 50px;
+}
+
+.team-members h1.sub-title{
+    padding-top: 20px;
+}
+
+.team-members-detail{
+    width: 100%;
+    text-align: left;
+}
+.team-members-detail h2{
+    padding-top: 50px;
+}
+.team-members-detail h2.sub-title{
+    padding-top: 15px;
+}
+.team-members-detail h3{
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.team-members-detail p{
+    padding: 5px 0;
+}
+
+@media only screen and (min-width:980px) {
+    .team-members .title{
+        width: 25%;
+        float: left;
+    }
+
+    .introduction div{
+        width: 75%;
+        float: left;
+    }
+    .team-members-detail{
+        width: 75%;
+        float: right;
+    }
+}
