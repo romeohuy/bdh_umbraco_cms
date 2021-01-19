@@ -3,34 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1340
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Bdh_Cms.Web", "Bdh_Cms.Web\", "{D3376795-47DF-4EF8-9443-F14736663EA8}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_53706"
-		Debug.AspNetCompiler.PhysicalPath = "Bdh_Cms.Web\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53706\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_53706"
-		Release.AspNetCompiler.PhysicalPath = "Bdh_Cms.Web\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53706\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "53706"
-		SlnRelativePath = "Bdh_Cms.Web\"
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BdhCMS.Web", "BdhCMS.Web\BdhCMS.Web.csproj", "{C9079C4B-F8A1-4FD3-9AE8-E431161DAA00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D3376795-47DF-4EF8-9443-F14736663EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D3376795-47DF-4EF8-9443-F14736663EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9079C4B-F8A1-4FD3-9AE8-E431161DAA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9079C4B-F8A1-4FD3-9AE8-E431161DAA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9079C4B-F8A1-4FD3-9AE8-E431161DAA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9079C4B-F8A1-4FD3-9AE8-E431161DAA00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
