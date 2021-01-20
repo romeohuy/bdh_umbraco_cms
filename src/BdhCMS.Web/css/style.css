@@ -252,13 +252,13 @@ img{
 }
 
 .page-title{
-    height: 200px;
-    background-image: url("/images/page-title.jpg");
+    height: auto;
+    /*background-image: url("/images/page-title.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    box-shadow: 0 0 10px #AAA;
-    line-height: 200px;
-    font-size: 60px;
+    box-shadow: 0 0 10px #AAA;*/
+    line-height: 100px;
+    font-size: 30px;
     font-weight: bold;
     font-family: 'Fira Sans',sans-serif;
     color: #4D4D4D;
@@ -285,6 +285,21 @@ img{
     height: 80px;
     width: auto;
 }
+.pagination nav{
+    text-align:center;
+}
+.pagination nav a, .pagination nav span {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f78312;
+    color:whitesmoke;
+}
+    .pagination nav a.nav-link--active {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #f74a12;
+        color: whitesmoke;
+    }
 
 @media only screen and (min-width:980px) {
     .contact-now {

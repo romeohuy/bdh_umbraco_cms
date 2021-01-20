@@ -2,7 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
-    var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url : String.Empty;
+    var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url() : String.Empty;
 }
 @section Header{
     <link rel="stylesheet" href="@Url.Content("~/css/homepage.css")" />
@@ -57,14 +57,14 @@
             <div>@Html.Raw(Model.HomeAboutDetails)</div>
         </div>
         <div class="col50">
-            <img src="@Model.HomeAboutRightImage.Url">
+            <img src="@Model.HomeAboutRightImage.Url()">
         </div>
     </div>
 </div>
 @*<?php require(dirname(__DIR__) . '/components/member-of.php'); ?>*@
 <div class="news">
     <div class="container">
-        <h1>LATEST NEWS</h1>
+        <h1>@Model.LatestNewsTitle</h1>
         <div class="clearfix">
             @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
         </div>
@@ -112,15 +112,13 @@
             <div class="contact-right">
                 <h2>SITE LINK</h2>
                 <ul>
-                    <li>One Stop Solution</li>
-                    <li><a href="/about-us">About Us</a></li>
-                    <li><a href="/services">Our Services</a></li>
-                    <li><a href="/services/accounting"><span>Accounting</span></a></li>
-                    <li><a href="/services/hr-payroll"><span>HR & Payroll</span></a></li>
-                    <li><a href="/services/taxation"><span>Taxation</span></a></li>
-                    <li><a href="/services/investment-finance"><span>Investment & Finance</span></a></li>
-                    <li><a href="#">Career</a></li>
-                    <li><a href="/contact-us">Contact Us</a></li>
+                    @{
+                        var footerMenu = Model.Root().Children.Where(x => x.IsVisible());
+                        foreach (var item in footerMenu)
+                        {
+                            <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+                        }
+                    }
                 </ul>
             </div>
         </div>

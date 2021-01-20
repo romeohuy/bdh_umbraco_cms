@@ -45,6 +45,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Blog Thumbnail Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("blogThumbnailImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent BlogThumbnailImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("blogThumbnailImage");
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]

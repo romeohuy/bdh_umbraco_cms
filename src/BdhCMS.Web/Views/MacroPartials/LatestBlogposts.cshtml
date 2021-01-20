@@ -45,22 +45,26 @@
 
     if (pagedBlogposts.Count > 0)
     {
-        <div class="blogposts">
+        foreach (ContentModels.Blogpost post in pagedBlogposts)
+        {
+            <div class="service clearfix">
+                <div class="service-hero">
+                    <a href="@post.Url()"><img src="@(post.BlogThumbnailImage?.Url())" alt="@post.PageTitle"></a>
+                </div>
+                <div class="blogpost-meta">
+                    <small class="blogpost-date">@post.CreateDate.ToShortDateString()</small>
+                    <small class="blogpost-cat">
+                        @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
+                    </small>
+                </div>
+                <div class="service-desc">
+                    <a href="@post.Url()" class="service-name">@post.PageTitle</a>
+                    <div>@post.Excerpt</div>
+                    <div><a href="@post.Url()" class="read-more">Read more</a></div>
+                </div>
 
-            @foreach (ContentModels.Blogpost post in pagedBlogposts)
-            {
-                <a href="@post.Url" class="blogpost">
-                    <div class="blogpost-meta">
-                        <small class="blogpost-date">@post.CreateDate.ToShortDateString()</small>
-                        <small class="blogpost-cat">
-                            @Html.Partial("~/Views/Partials/CategoryLinks.cshtml", post.Categories)
-                        </small>
-                    </div>
-                    <h3 class="blogpost-title">@post.PageTitle</h3>
-                    <div class="blogpost-excerpt">@post.Excerpt</div>
-                </a>
-            }
-        </div>
+            </div>
+        }
     }
 
     if (blogposts.Count > numberOfPosts)

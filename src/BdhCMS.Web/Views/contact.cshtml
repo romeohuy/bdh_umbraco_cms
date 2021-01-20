@@ -1,55 +1,72 @@
-﻿@inherits UmbracoViewPage<Contact>
+﻿@inherits UmbracoViewPage<ContentModels.Contact>
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
-
-
-    var coordinates = Model.MapCoordinates.ToString().Split(',');
-
-    var latitude = coordinates[0];
-    var longitude = coordinates[1];
-    var zoomLevel = coordinates[2];
-
-    // Build the coordinates string
-    var coordinatesString = longitude + "," + latitude + "," + longitude + "," + latitude;
+    var home = (Home)Model.Root();
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-<section class="section">
-    <div class="container">
+@section Header{
+    <link href="~/css/contact-page.css" rel="stylesheet" />
+}
 
-        <div class="row">
-            <div class="col-md-6">
-                <h2>@Model.MapHeader</h2>
-                <iframe width="550"
-                        height="400"
-                        frameborder="0"
-                        scrolling="no"
-                        marginheight="0"
-                        marginwidth="0"
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=@coordinatesString&amp;layer=mapnik&amp;marker=@Model.MapCoordinates"
-                        style="border: 1px solid black">
-                </iframe>
-
-                <br />
-
-                <small>
-                    <a href="https://www.openstreetmap.org/?mlat=@latitude&amp;mlon=@longitude#map=@zoomLevel/@latitude/@longitude&amp;layers=N">View Larger Map</a>
-                </small>
-            </div>
-
-            <div class="col-md-6">
-                <h2>@Model.ContactFormHeader</h2>
-                @Model.ContactIntro
-                <p class="compat-msg">
-        <em>Umbraco Forms</em> is required to render this form.It's a breeze to install, all you have to do is
-        go to the<em> Umbraco Forms</em> section in the back office and click Install, that's it! :) 
-        <br /><br />
-        <a href="/umbraco/#/forms" class="button button--border--solid">Go to Back Office and install Forms</a>
-        <!-- When Umbraco Forms is installed, uncomment this line -->
-        @* @Umbraco.RenderMacro("renderUmbracoForm", new {FormGuid=Model.ContactForm.ToString()}) *@
-        </p>
-            </div>
-
+<div class="title mobile">
+    <h1>@Model.PageTitle</h1>
+</div>
+<div id="map"></div>
+<form id="contact-form" class='clearfix'>
+    <div class="title desktop">
+        <h1>@Model.PageTitle</h1>
+    </div>
+    <div class="contact-info">
+        <div class="clearfix"><span>Tel: </span><a href="tel:+842873072739" class="link">@home.TopHeadPhoneNumber</a></div>
+        <div class="clearfix"><span>Hotline: </span><a href="tel:+84901401345" class="link">@home.TopHeaderMobileNumber</a></div>
+        <div class="clearfix"><span>Email: </span><a href="mailto:@(home.TopHeaderEmailAddress)" class="link">@(home.TopHeaderEmailAddress)</a></div>
+        <div class="clearfix"><span>Facebook: </span><a href="@home.TopHeaderFacebookLink" class="link">BDH Advisory</a></div>
+        <div class="clearfix"><span>Linkedin: </span><a href="@home.TopHeaderLinkedInUrl" class="link">BDH Advisory</a></div>
+        <div class="address-title">
+           @home.HCmaddressTitle
+            <p>@home.HCmfooterAddress</p>
+        </div>
+        <div class="address-title">
+            @home.HaNoiAddressTitle
+            <p>@home.HaNoiFooterAddress</p>
+            <p></p>
         </div>
     </div>
-</section>
+    <div class="contact-input">
+        <fieldset>
+            <div class="mobile">
+                <span>Please enter your details below to send us a message</span>
+            </div>
+            <div class="field">
+                <label for="name">Name<span>*</span></label>
+                <input id="name" name="name" type="text" value="" />
+            </div>
+            <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="phone" value="" />
+            </div>
+            <div class="field">
+                <label for="email">Email<span>*</span></label>
+                <input id="email" name="email" type="email" value="" />
+            </div>
+            <div class="field">
+                <label for="message">Message<span> *</span></label>
+                <textarea id="message" name="message" class="input"></textarea>
+            </div>
+        </fieldset>
+        <fieldset class="contact-option">
+            <label class="check_box" for="sign_up">
+                Sign up for latest news and updates.
+            </label>
+            <input id="sign_up" name="sign_up" class="check_box" type="checkbox" value="true" />
+            <button type="submit"><span>Send</span></button>
+        </fieldset>
+    </div>
+</form>
+@section Scripts{
+    <script src="~/scripts/common.js"></script>
+    <script src="~/scripts/homepage.js"></script>
+    <script src="~/scripts/contact.js"></script>
+    <script src="~/scripts/owl.carousel.min.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAJmIrQpe5L0byXYusa8vxzxX_fJbubiyE&callback=initMap' async defer></script>
+}

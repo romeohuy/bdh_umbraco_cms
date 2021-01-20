@@ -38,6 +38,8 @@
 }
 .team-members-detail h2{
     padding-top: 50px;
+    border-bottom: 2px solid #F78312;
+    margin-bottom: 10px;
 }
 .team-members-detail h2.sub-title{
     padding-top: 15px;

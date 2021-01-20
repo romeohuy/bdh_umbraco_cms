@@ -19,7 +19,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="en" />
     <meta name="distribution" content="global" />
-    <meta property="og:url" content="@Model.Url" />
+    <meta property="og:url" content="@Model.Url()" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="@Model.Name - @home.Sitename" />
     <meta property="og:description" content="" />
@@ -33,7 +33,7 @@
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta name="msapplication-TileImage" content="images/bdh-icon_192" />
     <meta name="theme-color" content="#333333" />
-    <link href="@Model.Url" rel="canonical" />
+    <link href="@Model.Url()" rel="canonical" />
     <link rel="icon" href="/images/bdh-icon_32.png" sizes="32x32" />
     <link rel="icon" href="/images/bdh-icon_192.png" sizes="192x192" />
     <link rel="apple-touch-icon-precomposed" sizes="192x192" href="/images/bdh-icon_192.png" />
@@ -63,10 +63,10 @@
             <label id="main-menu-btn" class="main-menu-btn" for="main-menu-state">
                 <span class="main-menu-btn-icon"></span> Mobile Menu
             </label>
-            <a class="logo" href="@home.Url" title="@home.Sitename">
-                @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
+            <a class="logo" href="@home.Url()" title="@home.Sitename">
+                @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url()))
                 {
-                    <img src="@home.SiteLogo.Url" alt="@home.Sitename">
+                    <img src="@home.SiteLogo.Url()" alt="@home.Sitename">
                 }
                 else
                 {
@@ -75,7 +75,15 @@
 
             </a>
             <ul id="top-nav" class='clearfix'>
-                <li><a href="/vi" class="link">Tiếng Việt</a></li>
+                @foreach (var (culture, infos) in Model.Cultures)
+                {
+                    <li>
+                        <a href="@Model.Url(culture)">
+                            @((culture.ToLowerInvariant().Contains("en") ? "English" : "Tiếng Việt"))
+                        </a>
+                    </li>
+                }
+                <li></li>
                 <li><img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone : @home.TopHeadPhoneNumber"></li>
                 <li><a href="tel:+842873072739" class="link">@home.TopHeadPhoneNumber</a></li>
                 <li><img src="@Url.Content("~/images/svg/email.svg")" alt="Email : @home.TopHeaderEmailAddress"></li>

@@ -162,7 +162,7 @@ textarea{
     }
 
     #contact-form{
-        height: calc(100vh - 260px);
+        min-height: calc(100vh - 260px);
         width: 750px;
         top: 3vh;
         position: absolute;

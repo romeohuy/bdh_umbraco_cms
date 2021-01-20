@@ -4,19 +4,28 @@
 @{
     Layout = "master.cshtml";
 }
-@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+@section Header{
+    <link href="~/css/services.css" rel="stylesheet" />
+}
 
-<section class="section">
-
-    <div class="container">
+<div class="page-title">
+    <div class="container">@Model.PageTitle</div>
+</div>
+<div class="service-list container clearfix">
+    <div class="col75">
+        <div class="introduction">
+            <p>The dedicated team of BDH Advisory is able to provide our client with a broad range of professional services within our one stop solution model.</p>
+        </div>
         @Umbraco.RenderMacro("latestBlogposts",
-            new
-            {
-                numberOfPosts = Model.HowManyPostsShouldBeShown,
-                startNodeId = Model.Id
-            })
+        new
+        {
+            numberOfPosts = Model.HowManyPostsShouldBeShown,
+            startNodeId = Model.Id
+        })
         @{
         }
     </div>
-
-</section>
+    <div class="col25">
+        @*<?php require(dirname(__DIR__) . '/components/side-contact.php'); ?>*@
+    </div>
+</div>

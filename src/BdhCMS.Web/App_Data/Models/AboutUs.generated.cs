@@ -45,6 +45,41 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// AboutUs Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("aboutUsDescription")]
+		public global::System.Web.IHtmlString AboutUsDescription => this.Value<global::System.Web.IHtmlString>("aboutUsDescription");
+
+		///<summary>
+		/// List Members
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("listMembers")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.TeamMemberItem> ListMembers => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.TeamMemberItem>>("listMembers");
+
+		///<summary>
+		/// Our Goal Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("ourGoalDescription")]
+		public global::System.Web.IHtmlString OurGoalDescription => this.Value<global::System.Web.IHtmlString>("ourGoalDescription");
+
+		///<summary>
+		/// Our Goal Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("ourGoalTitle")]
+		public string OurGoalTitle => this.Value<string>("ourGoalTitle");
+
+		///<summary>
+		/// Our Members Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("ourMembersTitle")]
+		public string OurMembersTitle => this.Value<string>("ourMembersTitle");
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
