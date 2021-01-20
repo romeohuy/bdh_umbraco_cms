@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
     <link rel="stylesheet" href="@Url.Content("~/css/header.css")" />
 
+    <link href="@Url.Content("~/css/font.css")" rel="stylesheet" />
     <link rel="stylesheet" href="@Url.Content("~/css/footer.css")" />
     @RenderSection("Header", required: false)
 </head>
@@ -58,6 +59,10 @@
 <body>
     <header>
         <div class="container clearfix">
+            <input id="main-menu-state" type="checkbox" />
+            <label id="main-menu-btn" class="main-menu-btn" for="main-menu-state">
+                <span class="main-menu-btn-icon"></span> Mobile Menu
+            </label>
             <a class="logo" href="@home.Url" title="@home.Sitename">
                 @if (home.SiteLogo != null && !string.IsNullOrEmpty(home.SiteLogo.Url))
                 {
@@ -69,10 +74,6 @@
                 }
 
             </a>
-            <input id="main-menu-state" type="checkbox" />
-            <label id="main-menu-btn" class="main-menu-btn" for="main-menu-state">
-                <span class="main-menu-btn-icon"></span> Mobile Menu
-            </label>
             <ul id="top-nav" class='clearfix'>
                 <li><a href="/vi" class="link">Tiếng Việt</a></li>
                 <li><img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone : @home.TopHeadPhoneNumber"></li>

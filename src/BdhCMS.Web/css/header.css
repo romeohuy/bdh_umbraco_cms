@@ -88,21 +88,24 @@ header .logo img{
 }
 
 header .main-menu-btn {
-    width: 24px;
-    height: 50px;
+    display: none;
+    height: 40px;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     font-size: 0;
+    position: relative;
 }
 
 .main-menu-btn-icon, .main-menu-btn-icon:before, .main-menu-btn-icon:after {
     position: absolute;
     height: 4px;
     width: 24px;
-    bottom : 25px;
+    top : 20px;
+    right: 10px;
     background: rgb(50,50,50);
     -webkit-transition: all 0.25s;
     transition: all 0.25s;
+    z-index: -9999;
 }
 
 .main-menu-btn-icon:before {
@@ -135,6 +138,7 @@ header .main-menu-btn {
 }
 
 #main-menu-state {
+    display: none;
     position: absolute;
     width: 1px;
     height: 1px;
@@ -153,7 +157,17 @@ header .main-menu-btn {
     padding: 5px;
     padding-left: 15px;
 }
-
+@media only screen and (max-width: 980px) {
+    #main-nav {
+        position: absolute;
+        top: 0px;
+        display: block;
+        width: 100%;
+    }
+    header .main-menu-btn {
+        display: block;
+    }
+}
 @media only screen and (min-width:980px) {    
 
     header .container{

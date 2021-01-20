@@ -268,10 +268,82 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\cache\1\8\5\3\4\1\1853410c64e47924b6e9f8c20cb44ca029f150a2.jpg" />
+    <Content Include="App_Data\cache\1\a\7\0\b\f\1a70bf0bbc787dd10609270712a8b5befac09aa2.jpg" />
+    <Content Include="App_Data\cache\2\3\6\8\b\a\2368bab3903dc54f2516a5ef0b2350055dcba57a.jpg" />
     <Content Include="App_Data\cache\3\f\1\6\9\c\3f169cbb84209702da6e7a36e73fe5119ad1ec46.jpg" />
+    <Content Include="App_Data\cache\5\1\1\d\5\7\511d5784d9ef65f59931ee960c1657175da4c591.jpg" />
+    <Content Include="App_Data\cache\5\3\a\5\e\8\53a5e8f87936191dbf76db72873d1f3329301f2b.jpg" />
+    <Content Include="App_Data\cache\5\4\f\8\5\5\54f8559f725c59c861eb9eea3c0d1a91cefb7bc4.jpg" />
+    <Content Include="App_Data\cache\5\5\5\1\7\c\55517c42126004cdb12ab89b947e3119c3d63f26.jpg" />
+    <Content Include="App_Data\cache\5\a\c\5\6\5\5ac5655d8226f55648f0b639ede1bc6d79b4b6d8.jpg" />
+    <Content Include="App_Data\cache\7\5\5\2\b\a\7552ba873f12b39df983200755080ff7f948a7d6.jpg" />
     <Content Include="App_Data\cache\a\6\2\4\8\c\a6248c30bd275e746c65df2e25d60208ce8caade.jpg" />
+    <Content Include="App_Data\cache\b\5\a\7\7\1\b5a771f0880ddd05fd7a8941b61f0c7d46785dde.jpg" />
+    <Content Include="App_Data\cache\c\4\6\c\9\8\c46c98058ae796497613e8fd2e8353af49a58101.jpg" />
+    <Content Include="App_Data\cache\d\f\0\9\b\2\df09b2d0d127548c71eabeff876ee31e05fa836e.jpg" />
+    <Content Include="App_Data\cache\d\f\8\8\e\7\df88e70432df07b92d738bfd39f2b86791ca4fb1.jpg" />
+    <Content Include="App_Data\cache\f\2\5\5\9\f\f2559f2f4ee22f60ecf1363441904647b31d0890.jpg" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-FDD8LSG.20210119.json" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-FDD8LSG.20210119_001.json" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-FDD8LSG.20210119_002.json" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-FDD8LSG.20210119_003.json" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-FDD8LSG.20210120.json" />
+    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-PC5U1N9.20210119.json" />
+    <Content Include="App_Data\packages\createdPackages.config" />
+    <Content Include="App_Data\packages\installedPackages.config" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_5100b1e861dc48e1a283da965e63dff7.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_6a1ba77fc33e4841892420083803c589.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\1_c6080ba56a814e7594674dd03000b8f6.cdJ" />
+    <Content Include="App_Data\TEMP\ClientDependency\DESKTOP-FDD8LSG-38fda2e83f7e9f12c591be37a52e65ad-map.xml" />
+    <Content Include="App_Data\TEMP\ClientDependency\DESKTOP-PC5U1N9-2975d62ba842950427873fb2672f5b3b-map.xml" />
     <Content Include="App_Data\TEMP\ClientDependency\DESKTOP-PC5U1N9-bdccec779056252fb4230250a2e9ae94-map.xml" />
     <Content Include="App_Data\TEMP\DistCache\LMW3SVC2ROOT-lastsynced.txt" />
+    <Content Include="App_Data\TEMP\DistCache\LMW3SVC3ROOT-lastsynced.txt" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments_29" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.fdt" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.fdx" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.fnm" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.frq" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.nrm" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.prx" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.tii" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.tis" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.tvd" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.tvf" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28.tvx" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_28_2.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_29.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_2a.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_2a_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\External\_2b.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments_29" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.fdt" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.fdx" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.fnm" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.frq" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.nrm" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.prx" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.tii" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.tis" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.tvd" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.tvf" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28.tvx" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_28_2.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_29.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_2a.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_2a_1.del" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_2b.cfs" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments.gen" />
+    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments_3" />
+    <Content Include="App_Data\TEMP\NuCache\NuCache.Content.db" />
+    <Content Include="App_Data\TEMP\NuCache\NuCache.Media.db" />
+    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-FDD8LSG.hash" />
+    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-FDD8LSG.list" />
+    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-PC5U1N9.hash" />
+    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-PC5U1N9.list" />
     <Content Include="App_Plugins\OsmMaps\assets\css\osmmaps.css" />
     <Content Include="App_Plugins\OsmMaps\assets\leaflet\images\layers-2x.png" />
     <Content Include="App_Plugins\OsmMaps\assets\leaflet\images\layers.png" />
@@ -342,7 +414,6 @@
     <Content Include="css\slider-home.css" />
     <Content Include="css\style.css" />
     <Content Include="css\umbraco-starterkit-style.css" />
-    <Content Include="fonts\index.php" />
     <Content Include="Global.asax" />
     <Content Include="images\1526eb1943ffa5a1fcee.png" />
     <Content Include="images\bdh-icon_152.png" />
@@ -419,9 +490,6 @@
     <Content Include="Media\ufcaaovu\18095416144_44a566a5f4_h.jpg" />
     <Content Include="Media\uldnw3ym\7371127652_e01b6ab56f_b.jpg" />
     <Content Include="Media\wmphsb03\4730684907_8a7f8759cb_b.jpg" />
-    <Content Include="obj\Debug\BdhCMS.Web.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\BdhCMS.Web.dll" />
-    <Content Include="obj\Debug\BdhCMS.Web.pdb" />
     <Content Include="scripts\common.js" />
     <Content Include="scripts\common.min.js" />
     <Content Include="scripts\contact.js" />
@@ -438,6 +506,7 @@
     <Content Include="Umbraco\assets\css\rte-content.css" />
     <Content Include="Umbraco\assets\css\umbraco.css" />
     <Content Include="Umbraco\assets\fonts\helveticons\helveticons.svg" />
+    <Content Include="Umbraco\assets\fonts\web.config" />
     <Content Include="Umbraco\assets\icons\icon-activity.svg" />
     <Content Include="Umbraco\assets\icons\icon-add.svg" />
     <Content Include="Umbraco\assets\icons\icon-addressbook.svg" />
@@ -2847,7 +2916,9 @@
     <Content Include="Umbraco\Views\users\views\overlays\remove.html" />
     <Content Include="Umbraco\Views\users\views\users\users.html" />
     <Content Include="Umbraco\Views\users\views\user\details.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\Models\AboutUs.generated.cs" />
@@ -2871,9 +2942,6 @@
     <Compile Include="App_Data\Models\ServiceElementItem.generated.cs" />
     <Compile Include="App_Data\Models\Services.generated.cs" />
     <Compile Include="App_Data\Models\SliderElement.generated.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2888,72 +2956,6 @@
     <Content Include="config\HealthChecks.config" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="config\BackOfficeTours\getting-started.json" />
-    <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-PC5U1N9.20210119.json" />
-    <Content Include="App_Data\packages\createdPackages.config" />
-    <Content Include="App_Data\packages\installedPackages.config" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_5100b1e861dc48e1a283da965e63dff7.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_6a1ba77fc33e4841892420083803c589.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_c6080ba56a814e7594674dd03000b8f6.cdJ" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments_u" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_l_5.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_m.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_m_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_n.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_n_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_o.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_o_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_p.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_q.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_r.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_r_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_s.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_s_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\_t.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments_u" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.fdt" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.fdx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.fnm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.frq" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.nrm" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.prx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.tii" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.tis" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.tvd" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.tvf" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l.tvx" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_l_5.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_m.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_m_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_n.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_n_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_o.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_o_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_p.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_q.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_r.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_r_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_s.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_s_1.del" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\_t.cfs" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments_2" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Content.db" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Media.db" />
-    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-PC5U1N9.hash" />
-    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-PC5U1N9.list" />
     <Content Include="App_Plugins\OsmMaps\package.manifest" />
     <Content Include="App_Plugins\StarterKit\backoffice\tours\create-content.json" />
     <Content Include="App_Plugins\StarterKit\backoffice\tours\data-structure.json" />
@@ -2965,10 +2967,6 @@
     <Content Include="fonts\lineto-brown-light.woff" />
     <Content Include="fonts\lineto-brown-regular.woff" />
     <Content Include="fonts\lineto-brown-thin.woff" />
-    <Content Include="obj\Debug\BdhCMS.Web.csproj.CopyComplete" />
-    <Content Include="obj\Debug\BdhCMS.Web.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Debug\BdhCMS.Web.csprojAssemblyReference.cache" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -2991,7 +2989,6 @@
     <Content Include="Umbraco\assets\fonts\lato\LatoLatin-Light.woff2" />
     <Content Include="Umbraco\assets\fonts\lato\LatoLatin-LightItalic.woff2" />
     <Content Include="Umbraco\assets\fonts\lato\LatoLatin-Regular.woff2" />
-    <Content Include="Umbraco\assets\fonts\web.config" />
     <Content Include="Umbraco\Install\Views\Index.cshtml" />
     <Content Include="Umbraco\Install\Views\Web.config" />
     <Content Include="Umbraco\Js\web.config" />
@@ -3093,6 +3090,10 @@
     <Content Include="Views\Product.cshtml" />
     <Content Include="Views\Products.cshtml" />
     <Content Include="Views\MacroPartials\HomeLatestBlogposts.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="Views\AboutUs.cshtml" />
+    <Content Include="Views\ServiceDetail.cshtml" />
+    <Content Include="Views\Services.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3103,7 +3104,6 @@
   <ItemGroup>
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="App_Data\TEMP\Install\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
