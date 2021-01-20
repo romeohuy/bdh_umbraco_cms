@@ -23,14 +23,14 @@
 
 .contact-input{
     width: 100%;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Muli', sans-serif;
     vertical-align: top;
     padding: 0;
 }
 
 .contact-info{
     width: 100%;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Muli', sans-serif;
     vertical-align: top;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .contact-info span{
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Muli', sans-serif;
     font-weight: bold;
     float: left;
     margin-right: 5px;
@@ -69,7 +69,7 @@
 
 .title{
     background: #ebebeb;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Muli', sans-serif;
     padding: 0 0 0 1vw;
 }
 
