@@ -16,8 +16,7 @@
         <div class="introduction">
             <p>The dedicated team of BDH Advisory is able to provide our client with a broad range of professional services within our one stop solution model.</p>
         </div>
-        @Umbraco.RenderMacro("latestBlogposts",
-        new
+        @Umbraco.RenderMacro("latestBlogposts", new
         {
             numberOfPosts = Model.HowManyPostsShouldBeShown,
             startNodeId = Model.Id

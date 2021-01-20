@@ -7,7 +7,6 @@ header{
 }
 
 header .container{
-    height: 200px;
     position: relative;
     z-index: 9;
     width: 100%;
@@ -55,18 +54,20 @@ header .logo img{
 }
 
 #top-nav li{
-    margin: 0 8px;
+    margin: 0 5px;
     float: left;
 }
 
-#top-nav li:nth-child(2){
+/*#top-nav li:nth-child(2){
     margin-right: 0;
 }
 
 #top-nav li:nth-child(3), #top-nav li:nth-child(5){
     margin-left: 0;
-}
-
+}*/
+#top-nav li:nth-child(2), #top-nav li:nth-child(4) {
+        margin-left: 0;
+    }
 #top-nav li a{
     line-height: 50px;
     color: #000;
@@ -248,11 +249,11 @@ header .main-menu-btn {
     }
 
     #top-nav li:last-child{
-        margin: 0 0 0 3px;
+        margin: 0 0 0 10px;
     }
 
     #top-nav li:nth-child(3), #top-nav li:nth-child(5){
-        margin: 0 0 0 3px;
+        margin: 0 0 0 10px;
     }
 
     .link-email{

@@ -74,16 +74,8 @@
                 }
 
             </a>
-            <ul id="top-nav" class='clearfix'>
-                @foreach (var (culture, infos) in Model.Cultures)
-                {
-                    <li>
-                        <a href="@Model.Url(culture)">
-                            @((culture.ToLowerInvariant().Contains("en") ? "English" : "Tiếng Việt"))
-                        </a>
-                    </li>
-                }
-                <li></li>
+           
+            <ul id="top-nav">
                 <li><img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone : @home.TopHeadPhoneNumber"></li>
                 <li><a href="tel:+842873072739" class="link">@home.TopHeadPhoneNumber</a></li>
                 <li><img src="@Url.Content("~/images/svg/email.svg")" alt="Email : @home.TopHeaderEmailAddress"></li>
@@ -91,7 +83,16 @@
                 <li><a href="@home.TopHeaderFacebookLink" class="link"><img src="@Url.Content("~/images/svg/facebook.svg")"></a></li>
                 <li><a href="@home.TopHeaderLinkedInUrl" class="link"><img src="@Url.Content("~/images/svg/linkedin.svg")"></a></li>
             </ul>
-
+            <ul id="top-nav-language" class='clearfix'>
+                @foreach (var (culture, infos) in Model.Cultures)
+                {
+                    <li>
+                        <a href="@Model.Url(culture)">
+                            <img src="@Url.Content(culture.ToLowerInvariant().Contains("en") ? "~/images/flags/en.png" : "~/images/flags/vn.png")" alt="@culture.ToFriendlyName()" />
+                        </a>
+                    </li>
+                }
+            </ul>
             <ul id="main-nav" class='clearfix'>
                 @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")
             </ul>

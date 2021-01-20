@@ -1,4 +1,5 @@
-﻿@using ContentModels = Umbraco.Web.PublishedModels;
+﻿@using Umbraco.Core.Services
+@using ContentModels = Umbraco.Web.PublishedModels;
 @using Umbraco.Web;
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 @{
@@ -11,7 +12,7 @@
         int.TryParse((string)Model.MacroParameters["numberOfPosts"], out numberOfPosts);
     }
 
-
+    var readMoreTextLocalize = Services.TextService.Localize("actions/readMore");
 }
 @if (startNodeId != null)
 {
@@ -60,7 +61,7 @@
                 <div class="service-desc">
                     <a href="@post.Url()" class="service-name">@post.PageTitle</a>
                     <div>@post.Excerpt</div>
-                    <div><a href="@post.Url()" class="read-more">Read more</a></div>
+                    <div><a href="@post.Url()" class="read-more">@(!readMoreTextLocalize.Equals("[readMore]") ? readMoreTextLocalize : "Chi tiết")</a></div>
                 </div>
 
             </div>

@@ -1,7 +1,38 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Services>
+@using Umbraco.Core.Services
+@using ContentModels = Umbraco.Web.PublishedModels;
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
+    var readMoreTextLocalize = Services.TextService.Localize("actions/readMore");
 }
-
+@section Header{
+    <link href="~/css/services.css" rel="stylesheet" />
+}
 @* the fun starts here *@
+<div class="page-title">
+    <div class="container">@Model.PageTitle</div>
+</div>
+<div class="service-list container clearfix">
+    <div class="col75">
+        <div class="introduction">
+            <p>@Model.ServiceIntro</p>
+        </div>
+        @foreach (var item in Model.Children<ServiceDetail>().ToList())
+        {
+            <div class="service clearfix">
+                <div class="service-hero">
+                    <a href="@item.Url()"><img src="@(item.ServiceMainImage?.Url())" alt="@item.PageTitle"></a>
+                </div>
+                <div class="service-desc">
+                    <a href="@item.Url()" class="service-name">@item.PageTitle</a>
+                    <p>@item.ServiceExcerpt</p>
+                    <div><a href="@item.Url()" class="read-more">@(!readMoreTextLocalize.Equals("[readMore]") ? readMoreTextLocalize : "Chi tiết")</a></div>
+                </div>
+            </div>
+        }
 
+    </div>
+    <div class="col25">
+        @Html.Partial("~/views/partials/ContactForm.cshtml")
+    </div>
+</div>

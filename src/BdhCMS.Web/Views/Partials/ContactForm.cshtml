@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+<div class="side-contact-form">
+    <p class="side-form-title">Enquire Now</p>
+    <form method="post" id="contact">
+        <div>
+            <ul>
+                <li>
+                    <div>
+                        <input name="name" id="txt_tame" type="text" value="" tabindex="1" placeholder="Name *" aria-required="true" aria-invalid="false">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <input name="phone" id="txt_phone" type="text" value="" tabindex="2" placeholder="Phone *" aria-required="true" aria-invalid="false">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <input name="email" id="txt_email" type="email" value="" tabindex="3" placeholder="Email *" aria-required="true" aria-invalid="false">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <textarea name="message" id="txt_message" tabindex="4" placeholder="Message" aria-invalid="false" rows="10" cols="50"></textarea>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <input type="submit" id="submit" value="Submit" tabindex="6">
+        </div>
+    </form>
+</div>

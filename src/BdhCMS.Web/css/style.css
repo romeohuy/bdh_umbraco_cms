@@ -10,7 +10,7 @@ body {
     margin: 0;
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    line-height: 24px;
 }
 
 ul, li, h1, h2, h3, p, table, th, td, tr, fieldset {
@@ -300,7 +300,22 @@ img{
         background: #f74a12;
         color: whitesmoke;
     }
-
+.nav-link--active {
+    color: #f78312 !important;
+}
+ul#top-nav-language {
+    float: right;
+    list-style: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul#top-nav-language li {
+    display: inline-block;
+    float: left;
+    padding: 12px 10px 0 0;
+    width: 50px;
+}
 @media only screen and (min-width:980px) {
     .contact-now {
         text-align: unset;

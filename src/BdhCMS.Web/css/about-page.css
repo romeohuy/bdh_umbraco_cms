@@ -1,10 +1,6 @@
-#main-nav >li:nth-child(2) >a{
-    color: #f78312;
-}
-
 .introduction div{
     width: 100%;
-    padding: 50px 0;
+    padding: 0 0 50px 0;
 }
 
 .introduction p{
@@ -38,6 +34,7 @@
 }
 .team-members-detail h2{
     padding-top: 50px;
+    padding-bottom: 5px;
     border-bottom: 2px solid #F78312;
     margin-bottom: 10px;
 }

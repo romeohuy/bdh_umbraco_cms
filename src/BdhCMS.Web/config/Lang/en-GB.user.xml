@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<language>
+<language alias="en" intName="English (UK)" localName="English (UK)" lcid="" culture="en-GB">
+  <creator>
+    <name>The Umbraco community</name>
+    <link>https://our.umbraco.com</link>
+  </creator>
+  <area alias="actions">
+    <key alias="readMore">Read more</key>
+  </area>
 </language>

@@ -45,11 +45,25 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Service Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("serviceDescription")]
+		public global::System.Web.IHtmlString ServiceDescription => this.Value<global::System.Web.IHtmlString>("serviceDescription");
+
+		///<summary>
 		/// Service Element Items
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
 		[ImplementPropertyType("serviceElementItems")]
 		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.ServiceElementItem> ServiceElementItems => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.ServiceElementItem>>("serviceElementItems");
+
+		///<summary>
+		/// Service Excerpt
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("serviceExcerpt")]
+		public string ServiceExcerpt => this.Value<string>("serviceExcerpt");
 
 		///<summary>
 		/// Service Main Image
