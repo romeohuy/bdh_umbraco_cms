@@ -5,6 +5,7 @@
 }
 @section Header{
     <link href="~/css/services.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=600953d276b2950011aa8be8&product=inline-share-buttons" async="async"></script>
 }
 
 <div class="page-title">
@@ -13,15 +14,24 @@
 <div class="service-list container clearfix">
     <div class="col75 clearfix">
         @*<div class="breadcrumb">
-                You are here: <a href="/">Home</a> > <a href="/services">Services</a> > HR & PAYROLL
-            </div>*@
+            You are here: <a href="/">Home</a> > <a href="/services">Services</a> > HR & PAYROLL
+        </div>*@
         <img src="@(Model.BlogThumbnailImage?.Url())">
         <div class="introduction">
             @Html.Raw(Model.BlogDescription)
         </div>
+
+        <!--Share button using https://sharethis.com-->
+        <div class="sharethis-inline-share-buttons"></div>
+        <!--Face book comment page-->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=447340809961884&autoLogAppEvents=1" nonce="5W8Q05MU"></script>
+        <div class="fb-comments" data-href="@Model.Url(mode:UrlMode.Absolute)" data-width="100%" data-numposts="5"></div>
+
     </div>
     <div class="col25">
         @Html.Partial("~/views/partials/ContactForm.cshtml")
     </div>
 </div>
-@*<?php require(dirname(__DIR__) . '/components/member-of.php'); ?>*@
+
+@Html.Partial("~/views/partials/PartnerList.cshtml", (Home)Model.Root())
