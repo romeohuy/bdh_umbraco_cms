@@ -36,4 +36,4 @@
         @Html.Partial("~/views/partials/ContactForm.cshtml")
     </div>
 </div>
-@*<?php require(dirname(__DIR__) . '/components/member-of.php'); ?>*@
+@Html.Partial("~/views/partials/PartnerList.cshtml", (Home)Model.Root())

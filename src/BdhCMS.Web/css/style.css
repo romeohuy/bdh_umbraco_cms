@@ -10,7 +10,7 @@ body {
     margin: 0;
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
-    line-height: 24px;
+    line-height: normal;
 }
 
 ul, li, h1, h2, h3, p, table, th, td, tr, fieldset {
@@ -298,7 +298,8 @@ img{
         display: inline-block;
         padding: 10px 20px;
         background: #f74a12;
-        color: whitesmoke;
+        color: white;
+        font-weight: bold;
     }
 .nav-link--active {
     color: #f78312 !important;

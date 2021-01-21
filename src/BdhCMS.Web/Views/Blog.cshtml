@@ -25,6 +25,6 @@
         }
     </div>
     <div class="col25">
-        @*<?php require(dirname(__DIR__) . '/components/side-contact.php'); ?>*@
+        @Html.Partial("~/views/partials/ContactForm.cshtml", (Home)Model.Root())
     </div>
 </div>

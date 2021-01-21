@@ -213,6 +213,20 @@ namespace Umbraco.Web.PublishedModels
 		public string LatestNewsTitle => this.Value<string>("latestNewsTitle");
 
 		///<summary>
+		/// Partner List
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("partnerList")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.PartnerItem> PartnerList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.PartnerItem>>("partnerList");
+
+		///<summary>
+		/// Partner List Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("partnerListTitle")]
+		public string PartnerListTitle => this.Value<string>("partnerListTitle");
+
+		///<summary>
 		/// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]

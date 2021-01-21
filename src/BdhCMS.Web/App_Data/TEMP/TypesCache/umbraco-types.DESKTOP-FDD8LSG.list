@@ -599,6 +599,7 @@ Umbraco.Web.HealthCheck.NotificationMethods.EmailNotificationMethod, Umbraco.Web
 Umbraco.Core.Models.PublishedContent.PublishedElementModel
 
 Umbraco.Web.PublishedModels.Feature, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Umbraco.Web.PublishedModels.PartnerItem, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.ServiceElementItem, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.SliderElement, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.TeamMemberItem, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -623,7 +624,4 @@ Umbraco.Web.PublishedModels.Product, BdhCMS.Web, Version=1.0.0.0, Culture=neutra
 Umbraco.Web.PublishedModels.Products, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.ServiceDetail, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Services, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-
-Umbraco.Core.Deploy.IServiceConnector
-
 
