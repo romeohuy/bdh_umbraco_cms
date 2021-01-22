@@ -11,7 +11,6 @@
     {
         int.TryParse((string)Model.MacroParameters["numberOfPosts"], out numberOfPosts);
     }
-    var readMoreTextLocalize = Services.TextService.Localize("actions/readMore");
 }
 @if (startNodeId != null)
 {
@@ -52,12 +51,12 @@
                 <div class="col50">
                     <div class="description">
                         <h2>@post.PageTitle</h2>
-                        <p>@post.CreateDate.ToShortDateString()</p>
+                        <b>@post.CreateDate.ToShortDateString()</b>
                         <div>
                             @post.Excerpt
                         </div>
                         <p>
-                            <a href="@post.Url">@(!readMoreTextLocalize.Equals("[readMore]") ? readMoreTextLocalize : "Chi tiết")</a>
+                            <a href="@post.Url">Read more</a>
                         </p>
                     </div>
                 </div>
