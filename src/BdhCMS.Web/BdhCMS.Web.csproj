@@ -330,6 +330,7 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="config\splashes\noNodes.aspx" />
     <Content Include="css\about-page.css" />
+    <Content Include="css\blog.css" />
     <Content Include="css\contact-page.css" />
     <Content Include="css\font.css" />
     <Content Include="css\footer.css" />
@@ -358,6 +359,7 @@
     <Content Include="images\investment.jpg" />
     <Content Include="images\loading.gif" />
     <Content Include="images\newsback.jpg" />
+    <Content Include="images\number-ol.PNG" />
     <Content Include="images\page-title.jpg" />
     <Content Include="images\payroll.jpg" />
     <Content Include="images\quality.jpg" />
@@ -2854,6 +2856,7 @@
     <Compile Include="App_Data\Models\Blogpost.generated.cs" />
     <Compile Include="App_Data\Models\Contact.generated.cs" />
     <Compile Include="App_Data\Models\ContentBase.generated.cs" />
+    <Compile Include="App_Data\Models\ContentBasePart.generated.cs" />
     <Compile Include="App_Data\Models\ContentPage.generated.cs" />
     <Compile Include="App_Data\Models\Feature.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
@@ -2897,6 +2900,7 @@
     <Content Include="fonts\lineto-brown-light.woff" />
     <Content Include="fonts\lineto-brown-regular.woff" />
     <Content Include="fonts\lineto-brown-thin.woff" />
+    <Content Include="manifest.json" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />

@@ -8,5 +8,18 @@
 <li><a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url()">@site.Name</a></li>
 @foreach (var item in selection)
 {
-    <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+    if (item.Children().Any() && item.GetType() == typeof(Services))
+    {
+        <li class="has-sub">
+            <a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a>
+            <ul class="sub-menu">
+                @Html.Partial("~/views/partials/navigation/SubNavigation.cshtml", item)
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+    }
+
 }

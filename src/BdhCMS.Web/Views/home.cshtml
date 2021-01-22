@@ -116,7 +116,21 @@
                         var footerMenu = Model.Root().Children.Where(x => x.IsVisible());
                         foreach (var item in footerMenu)
                         {
-                            <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+                            if (item.Children().Any() && item.GetType() == typeof(Services))
+                            {
+                                <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+
+                                var siteSectionFooter = item.AncestorOrSelf(2);
+                                var selectionFooters = siteSectionFooter.Children.Where(x => x.IsVisible());
+                                foreach (var itemContent in selectionFooters)
+                                {
+                                    <li><a class="link nav-link" href="@itemContent.Url()"><span>@itemContent.Name</span></a></li>
+                                }
+                            }
+                            else
+                            {
+                                <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+                            }
                         }
                     }
                 </ul>

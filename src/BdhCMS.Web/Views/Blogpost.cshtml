@@ -5,9 +5,20 @@
 }
 @section Header{
     <link href="~/css/services.css" rel="stylesheet" />
+    <link href="~/css/blog.css" rel="stylesheet" />
     <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=600953d276b2950011aa8be8&product=inline-share-buttons" async="async"></script>
 }
-
+<style>
+    .sharethis-inline-share-buttons {
+        float: left;
+        width: auto;
+    }
+    .zalo-share-button {
+        float: left;
+        margin-left: 10px;
+        margin-top: 2px;
+    }
+</style>
 <div class="page-title">
     <div class="container">@Model.PageTitle</div>
 </div>
@@ -17,12 +28,43 @@
             You are here: <a href="/">Home</a> > <a href="/services">Services</a> > HR & PAYROLL
         </div>*@
         <img src="@(Model.BlogThumbnailImage?.Url())">
+        <hr />
         <div class="introduction">
             @Html.Raw(Model.BlogDescription)
         </div>
+        @if (Model.ContentPartItems != null && Model.ContentPartItems.Any())
+        {
+            <div class="menu-part-content">
+                <h3>Menu:</h3>
+                <ol class="menu-content-part-items">
+                    @{
+                        var indexMenu = 1;
+                        foreach (var item in Model.ContentPartItems)
+                        {
+                            <li><a id="linkto-content-part-@(item.Key)" href="#"><h4>@(indexMenu + ".") @item.ContentPartTitle</h4></a></li>
+                            indexMenu++;
+                        }
+
+                    }
+                    
+                </ol>
+            </div>
+
+            foreach (var item in Model.ContentPartItems)
+            {
+                <div id="content-part-@(item.Key)"  class="introduction clearfix">
+                    <div>
+                        <h3>@item.ContentPartTitle</h3>
+                        @Html.Raw(item.ContentPartDescription)
+                    </div>
+                </div>
+            }
+        }
 
         <!--Share button using https://sharethis.com-->
         <div class="sharethis-inline-share-buttons"></div>
+        <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+        <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="3" data-color="blue" data-customize=false></div>
         <!--Face book comment page-->
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=447340809961884&autoLogAppEvents=1" nonce="5W8Q05MU"></script>
@@ -35,3 +77,20 @@
 </div>
 
 @Html.Partial("~/views/partials/PartnerList.cshtml", (Home)Model.Root())
+@section scripts
+{
+    <script>
+        $(function() {
+            @foreach (var item in Model.ContentPartItems)
+            {
+                <text>
+                    $("#linkto-content-part-@(item.Key)").click(function() {
+                        $([document.documentElement, document.body]).animate({
+                            scrollTop: $("#content-part-@(item.Key)").offset().top
+                        }, 500);
+                    });
+                </text>
+            }
+        });
+    </script>
+}

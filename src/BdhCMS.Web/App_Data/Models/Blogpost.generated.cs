@@ -73,6 +73,13 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.Collections.Generic.IEnumerable<string> Categories => this.Value<global::System.Collections.Generic.IEnumerable<string>>("categories");
 
 		///<summary>
+		/// Content Part Items
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("contentPartItems")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.ContentBasePart> ContentPartItems => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.ContentBasePart>>("contentPartItems");
+
+		///<summary>
 		/// Excerpt: Introduction to your blog post. This is also used in the summaries on the front of the blog as well as the homepage
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]

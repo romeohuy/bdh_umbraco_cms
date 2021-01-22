@@ -31,7 +31,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="" />
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="images/bdh-icon_192" />
+    <meta name="msapplication-TileImage" content="@Url.Content("~/images/bdh-icon_192.png")" />
     <meta name="theme-color" content="#333333" />
     <link href="@Model.Url()" rel="canonical" />
     <link rel="icon" href="/images/bdh-icon_32.png" sizes="32x32" />
@@ -40,11 +40,11 @@
     <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/bdh-icon_180.png" />
     <link rel="apple-touch-icon-precomposed" sizes="167x167" href="/images/bdh-icon_167.png" />
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/bdh-icon_152.png" />
-    <link rel="apple-touch-startup-image" href="/images/bdh-icon_192.png/">
+    <link rel="apple-touch-startup-image" href="@Url.Content("~/images/bdh-icon_192.png")">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="@home.Sitename">
     <meta name="apple-mobile-web-app-status-bar-style" content="#333333">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="@Url.Content("~/manifest.json")">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700|Quicksand&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,700&display=swap&subset=vietnamese" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700,800,900&amp;display=swap" rel="stylesheet">
@@ -72,12 +72,11 @@
                 {
                     <img src="@Url.Content("~/images/header-logo.png")" alt="@home.Sitename">
                 }
-
             </a>
            
             <ul id="top-nav">
                 <li><img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone : @home.TopHeadPhoneNumber"></li>
-                <li><a href="tel:+842873072739" class="link">@home.TopHeadPhoneNumber</a></li>
+                <li><a href="tel:@(home.TopHeadPhoneNumber)" class="link">@home.TopHeadPhoneNumber</a></li>
                 <li><img src="@Url.Content("~/images/svg/email.svg")" alt="Email : @home.TopHeaderEmailAddress"></li>
                 <li><a href="mailto:@(home.TopHeaderEmailAddress)" class="link link-email">@home.TopHeaderEmailAddress</a></li>
                 <li><a href="@home.TopHeaderFacebookLink" class="link"><img src="@Url.Content("~/images/svg/facebook.svg")"></a></li>

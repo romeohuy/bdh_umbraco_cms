@@ -332,3 +332,8 @@ ul#top-nav-language li {
         line-height: 110px;
     }
 }
+@media only screen and (max-width: 980px) {
+    .sub-menu {
+        margin-left: 20px;
+    }
+}
