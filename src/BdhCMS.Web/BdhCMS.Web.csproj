@@ -2875,7 +2875,13 @@
     <Compile Include="App_Data\Models\Services.generated.cs" />
     <Compile Include="App_Data\Models\SliderElement.generated.cs" />
     <Compile Include="App_Data\Models\TeamMemberItem.generated.cs" />
+    <Compile Include="Composing\RegisterServicesComposer.cs" />
+    <Compile Include="Controllers\ContactFormController.cs" />
+    <Compile Include="Helpers\StringHelpers.cs" />
+    <Compile Include="Models\ContactFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesMail\ISmtpService.cs" />
+    <Compile Include="ServicesMail\SmtpService .cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="config\imageprocessor\security.config" />

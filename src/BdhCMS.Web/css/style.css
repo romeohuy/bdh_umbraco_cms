@@ -317,6 +317,12 @@ ul#top-nav-language li {
     padding: 12px 10px 0 0;
     width: 50px;
 }
+.text-danger {
+    color: red;
+    float: right;
+    margin-top: -35px;
+    margin-right: 10px;
+}
 @media only screen and (min-width:980px) {
     .contact-now {
         text-align: unset;

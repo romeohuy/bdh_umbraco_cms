@@ -25,6 +25,6 @@
         }
     </div>
     <div class="col25">
-        @Html.Partial("~/views/partials/ContactForm.cshtml", (Home)Model.Root())
+        @{ Html.RenderAction("RenderSectionContactForm", "ContactForm"); }
     </div>
 </div>

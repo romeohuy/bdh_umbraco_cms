@@ -72,7 +72,7 @@
 
     </div>
     <div class="col25">
-        @Html.Partial("~/views/partials/ContactForm.cshtml")
+        @{ Html.RenderAction("RenderSectionContactForm", "ContactForm"); }
     </div>
 </div>
 
