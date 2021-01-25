@@ -12,7 +12,8 @@
     <h1>@Model.PageTitle</h1>
 </div>
 <div id="map"></div>
-<form id="contact-form" class='clearfix'>
+@using (Html.BeginUmbracoForm("Submit", "ContactForm", FormMethod.Post, htmlAttributes: new {@id = "contact-form", @class= "clearfix" }))
+{
     <div class="title desktop">
         <h1>@Model.PageTitle</h1>
     </div>
@@ -23,7 +24,7 @@
         <div class="clearfix"><span>Facebook: </span><a href="@home.TopHeaderFacebookLink" class="link">BDH Advisory</a></div>
         <div class="clearfix"><span>Linkedin: </span><a href="@home.TopHeaderLinkedInUrl" class="link">BDH Advisory</a></div>
         <div class="address-title">
-           @home.HCmaddressTitle
+            @home.HCmaddressTitle
             <p>@home.HCmfooterAddress</p>
         </div>
         <div class="address-title">
@@ -39,15 +40,15 @@
             </div>
             <div class="field">
                 <label for="name">Name<span>*</span></label>
-                <input id="name" name="name" type="text" value="" />
+                <input id="name" name="name" type="text" value=""/>
             </div>
             <div class="field">
                 <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="phone" value="" />
+                <input id="phone" name="phone" type="phone" value=""/>
             </div>
             <div class="field">
                 <label for="email">Email<span>*</span></label>
-                <input id="email" name="email" type="email" value="" />
+                <input id="email" name="email" type="email" value=""/>
             </div>
             <div class="field">
                 <label for="message">Message<span> *</span></label>
@@ -58,11 +59,11 @@
             <label class="check_box" for="sign_up">
                 Sign up for latest news and updates.
             </label>
-            <input id="sign_up" name="sign_up" class="check_box" type="checkbox" value="true" />
+            <input id="sign_up" name="sign_up" class="check_box" type="checkbox" value="true"/>
             <button type="submit"><span>Send</span></button>
         </fieldset>
     </div>
-</form>
+}
 @section Scripts{
     <script src="~/scripts/common.js"></script>
     <script src="~/scripts/homepage.js"></script>
