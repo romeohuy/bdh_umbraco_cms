@@ -49,7 +49,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
 		[ImplementPropertyType("careerExcerpt")]
-		public string CareerExcerpt => this.Value<string>("careerExcerpt");
+		public global::System.Web.IHtmlString CareerExcerpt => this.Value<global::System.Web.IHtmlString>("careerExcerpt");
 
 		///<summary>
 		/// Job Description

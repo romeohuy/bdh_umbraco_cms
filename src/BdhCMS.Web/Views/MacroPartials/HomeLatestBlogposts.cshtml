@@ -11,6 +11,8 @@
     {
         int.TryParse((string)Model.MacroParameters["numberOfPosts"], out numberOfPosts);
     }
+
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 }
 @if (startNodeId != null)
 {
@@ -56,7 +58,7 @@
                             @post.Excerpt
                         </div>
                         <p>
-                            <a href="@post.Url">Read more</a>
+                            <a href="@post.Url">@(currentCulture.Contains("en") ? "Read more" : "Chi tiết")</a>
                         </p>
                     </div>
                 </div>

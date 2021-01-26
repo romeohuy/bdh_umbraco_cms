@@ -3,6 +3,7 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 }
 @section Header{
     <link href="~/css/services.css" rel="stylesheet" />
@@ -25,7 +26,7 @@
                 <div class="service-desc">
                     <a href="@item.Url()" class="service-name">@item.PageTitle</a>
                     <p>@item.ServiceExcerpt</p>
-                    <div><a href="@item.Url()" class="read-more">Read more</a></div>
+                    <div><a href="@item.Url()" class="read-more">@(currentCulture.Contains("en") ? "Read more" : "Chi tiết")</a></div>
                 </div>
             </div>
         }

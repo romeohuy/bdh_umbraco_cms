@@ -19,12 +19,12 @@
         </div>*@
         <img src="@(Model.JobMainImage?.Url())">
         <h3 class="title">Job Description</h3>
-        <div class="introduction">
+        <div class="job-description">
             @Html.Raw(Model.JobDescription)
         </div>
         <hr />
         <h3 class="title">Your Skills and Experience</h3>
-        <div class="introduction">
+        <div class="job-skill">
             @Html.Raw(Model.YourSkillsAndExperience)
         </div>
     </div>

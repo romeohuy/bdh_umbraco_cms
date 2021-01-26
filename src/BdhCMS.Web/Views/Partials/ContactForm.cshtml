@@ -1,6 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BdhCMS.Web.Models.ContactFormViewModel>
+@{
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
 <div class="side-contact-form">
-    <p class="side-form-title">Contact Form</p>
+    <p class="side-form-title">@(currentCulture.Contains("en") ? "Send Contact" : "Gửi liên hệ")</p>
     @using (Html.BeginUmbracoForm("Submit", "ContactForm", FormMethod.Post,htmlAttributes: new { @id = "contact" }))
     {
     <div>
