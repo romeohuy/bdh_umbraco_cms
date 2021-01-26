@@ -66,6 +66,13 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent JobMainImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("jobMainImage");
 
 		///<summary>
+		/// Job Position
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("jobPosition")]
+		public string JobPosition => this.Value<string>("jobPosition");
+
+		///<summary>
 		/// Valid to date
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]

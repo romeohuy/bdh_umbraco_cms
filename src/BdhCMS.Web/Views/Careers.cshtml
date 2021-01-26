@@ -22,7 +22,7 @@
                     <a href="@item.Url()"><img src="@(item.JobMainImage?.Url())" alt="@item.PageTitle"></a>
                 </div>
                 <div class="service-desc">
-                    <a href="@item.Url()" class="service-name">@item.PageTitle</a>
+                    <a href="@item.Url()" class="service-name"><strong>[@item.JobPosition]</strong> - @item.PageTitle</a>
                     <p>@item.CareerExcerpt</p>
                     <div><a href="@item.Url()" class="read-more">Read more</a></div>
                 </div>
