@@ -2854,6 +2854,8 @@
     <Compile Include="App_Data\Models\AboutUs.generated.cs" />
     <Compile Include="App_Data\Models\Blog.generated.cs" />
     <Compile Include="App_Data\Models\Blogpost.generated.cs" />
+    <Compile Include="App_Data\Models\CareerDetail.generated.cs" />
+    <Compile Include="App_Data\Models\Careers.generated.cs" />
     <Compile Include="App_Data\Models\Contact.generated.cs" />
     <Compile Include="App_Data\Models\ContentBase.generated.cs" />
     <Compile Include="App_Data\Models\ContentBasePart.generated.cs" />
@@ -2876,8 +2878,10 @@
     <Compile Include="App_Data\Models\SliderElement.generated.cs" />
     <Compile Include="App_Data\Models\TeamMemberItem.generated.cs" />
     <Compile Include="Composing\RegisterServicesComposer.cs" />
+    <Compile Include="Controllers\ApplyJobFormController.cs" />
     <Compile Include="Controllers\ContactFormController.cs" />
     <Compile Include="Helpers\StringHelpers.cs" />
+    <Compile Include="Models\ApplyJobFormViewModel.cs" />
     <Compile Include="Models\ContactFormViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesMail\ISmtpService.cs" />
@@ -3036,6 +3040,9 @@
     <Content Include="Views\Services.cshtml" />
     <Content Include="Views\Partials\ContactForm.cshtml" />
     <Content Include="Views\Partials\PartnerList.cshtml" />
+    <Content Include="Views\CareerDetail.cshtml" />
+    <Content Include="Views\Careers.cshtml" />
+    <Content Include="Views\Partials\ApplyForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

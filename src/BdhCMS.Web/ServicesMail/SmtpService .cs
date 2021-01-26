@@ -18,15 +18,16 @@ namespace BdhCMS.Web.ServicesMail
             _logger = logger;
         }
 
-        public bool SendEmail(ContactFormViewModel model)
+        public string SendContactToEmail(ContactFormViewModel model)
         {
             try
             {
-                var frommail = new MailAddress(ConfigurationManager.AppSettings["MailAddress"]);
-                var Pass = ConfigurationManager.AppSettings["EmailPassword"];
-                var tomail = new MailAddress(ConfigurationManager.AppSettings["EmailReceive"]);
-                string Title = ConfigurationManager.AppSettings["EmailTitle"];
-                string Message = " Name: " + model.Name + " Phone: " + model.Phone + " \n\nEmail: " + model.Email + " \n\nMessages: " + model.Message;
+                var fromEmail = new MailAddress(ConfigurationManager.AppSettings["MailAddress"]);
+                var pass = ConfigurationManager.AppSettings["EmailPassword"];
+                var toEmail = new MailAddress(ConfigurationManager.AppSettings["EmailReceive"]);
+                string title = ConfigurationManager.AppSettings["EmailTitle"];
+
+                string message = " Name: " + model.Name + " Phone: " + model.Phone + " \n\nEmail: " + model.Email + " \n\nMessages: " + model.Message;
                 var smtp = new SmtpClient()
                 {
                     Host = ConfigurationManager.AppSettings["HostMail"],
@@ -34,20 +35,21 @@ namespace BdhCMS.Web.ServicesMail
                     EnableSsl = bool.Parse(ConfigurationManager.AppSettings["EnableSslMail"]),
                     DeliveryMethod = SmtpDeliveryMethod.Network,
                     UseDefaultCredentials = bool.Parse(ConfigurationManager.AppSettings["UseDefaultCredentialsMail"]),
-                    Credentials = new NetworkCredential(frommail.Address, Pass)
+                    Credentials = new NetworkCredential(fromEmail.Address, pass)
                 };
-                var mess = new MailMessage(frommail, tomail)
+
+                var mess = new MailMessage(fromEmail, toEmail)
                 {
-                    Subject = Title,
-                    Body = Message,
+                    Subject = title,
+                    Body = message
                 };
                 smtp.Send(mess);
-                return true;
+                return string.Empty;
             }
             catch (Exception ex)
             {
                 _logger.Error(typeof(ContactFormController), ex, "Error sending contact form.");
-                return false;
+                return ex.Message;
             }
         }
     }

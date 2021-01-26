@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.CareerDetail>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}
+@section Header{
+    <link href="~/css/services.css" rel="stylesheet" />
+}
+
+@* the fun starts here *@
+
+<div class="page-title">
+    <div class="container">@Model.PageTitle</div>
+</div>
+<div class="service-list container clearfix">
+    <div class="col75 clearfix">
+        @*<div class="breadcrumb">
+            You are here: <a href="/">Home</a> > <a href="/services">Services</a> > HR & PAYROLL
+        </div>*@
+        <img src="@(Model.JobMainImage?.Url())">
+        <h3 class="title">Job Description</h3>
+        <div class="introduction">
+            @Html.Raw(Model.JobDescription)
+        </div>
+        <hr />
+        <h3 class="title">Your Skills and Experience</h3>
+        <div class="introduction">
+            @Html.Raw(Model.YourSkillsAndExperience)
+        </div>
+    </div>
+    <div class="col25">
+        @{ Html.RenderAction("RenderSectionApplyJobForm", "ApplyJobForm"); }
+    </div>
+</div>
+@Html.Partial("~/views/partials/PartnerList.cshtml", (Home)Model.Root())

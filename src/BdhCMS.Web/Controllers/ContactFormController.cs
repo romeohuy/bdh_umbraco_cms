@@ -14,6 +14,11 @@ namespace BdhCMS.Web.Controllers
     {
         private readonly ISmtpService _smtpService;
 
+        public ContactFormController(ISmtpService smtpService)
+        {
+            _smtpService = smtpService;
+        }
+
         /// <summary>
         /// Render partial view form sign up an event on page Event detail view
         /// </summary>
@@ -22,9 +27,8 @@ namespace BdhCMS.Web.Controllers
         {
             var prevailEvent = Services.ContentService.GetById(CurrentPage.Id);
             var endDateTime = prevailEvent.GetValue<DateTime?>("endDateTime");
-            var model = new ContactFormViewModel();
-            model.ContactPageId = CurrentPage.Id;
-            
+            var model = new ContactFormViewModel {ContactPageId = CurrentPage.Id};
+
             return PartialView("~/Views/Partials/ContactForm.cshtml", model);
         }
 
@@ -35,6 +39,12 @@ namespace BdhCMS.Web.Controllers
                 return CurrentUmbracoPage();
 
             // Work with form data here
+            var result = _smtpService.SendContactToEmail(model);
+            if (!string.IsNullOrEmpty(result))
+            {
+                ModelState.AddModelError("Summary", result);
+                return CurrentUmbracoPage();
+            }
             return RedirectToCurrentUmbracoPage();
         }
     }

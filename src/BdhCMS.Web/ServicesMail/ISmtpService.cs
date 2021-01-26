@@ -3,6 +3,6 @@ namespace BdhCMS.Web.ServicesMail
 {
     public interface ISmtpService
     {
-        bool SendEmail(ContactFormViewModel model);
+        string SendContactToEmail(ContactFormViewModel model);
     }
 }
