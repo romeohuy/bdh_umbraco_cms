@@ -6,6 +6,7 @@ using BdhCMS.Web.ServicesMail;
 using BdhCMS.Web.Models;
 using BdhCMS.Web.Controllers;
 using System.Configuration;
+using System.Linq;
 
 namespace BdhCMS.Web.ServicesMail
 {
@@ -25,9 +26,10 @@ namespace BdhCMS.Web.ServicesMail
                 var fromEmail = new MailAddress(ConfigurationManager.AppSettings["MailAddress"]);
                 var pass = ConfigurationManager.AppSettings["EmailPassword"];
                 var toEmail = new MailAddress(ConfigurationManager.AppSettings["EmailReceive"]);
-                string title = ConfigurationManager.AppSettings["EmailTitle"];
+                
+                string title = string.Format(ConfigurationManager.AppSettings["EmailTitle"], model.Name);
 
-                string message = " Name: " + model.Name + " Phone: " + model.Phone + " \n\nEmail: " + model.Email + " \n\nMessages: " + model.Message;
+                string message = "Name: " + model.Name + "\n\nPhone: " + model.Phone + " \n\nEmail: " + model.Email + " \n\nMessages: " + model.Message;
                 var smtp = new SmtpClient()
                 {
                     Host = ConfigurationManager.AppSettings["HostMail"],
@@ -43,6 +45,15 @@ namespace BdhCMS.Web.ServicesMail
                     Subject = title,
                     Body = message
                 };
+
+                var ccMailsString = ConfigurationManager.AppSettings["EmailCC"];
+                if (!string.IsNullOrEmpty(ccMailsString))
+                {
+                    foreach (var mailAddress in ccMailsString.Split(',').Select(x => new MailAddress(x)).ToList())
+                    {
+                        mess.CC.Add(mailAddress);
+                    }
+                }
                 smtp.Send(mess);
                 return string.Empty;
             }

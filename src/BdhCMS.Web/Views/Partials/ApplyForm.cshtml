@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <div>
-                        @Html.TextBoxFor(m => m.Message, htmlAttributes: new { @id = "txt_message", tabindex = "4", placeholder = "Message *" })
+                        @Html.TextAreaFor(m => m.Message, htmlAttributes: new { @id = "txt_message", tabindex = "4", placeholder = "Message *" })
                         @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
                         @*<textarea name="message" id="txt_message" tabindex="4" placeholder="Message" aria-invalid="false" rows="10" cols="50"></textarea>*@
                     </div>
