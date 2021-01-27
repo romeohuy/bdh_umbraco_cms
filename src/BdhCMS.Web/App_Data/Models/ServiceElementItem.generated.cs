@@ -63,7 +63,7 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
 		[ImplementPropertyType("featureDetails")]
-		public string FeatureDetails => this.Value<string>("featureDetails");
+		public global::System.Web.IHtmlString FeatureDetails => this.Value<global::System.Web.IHtmlString>("featureDetails");
 
 		///<summary>
 		/// Name
