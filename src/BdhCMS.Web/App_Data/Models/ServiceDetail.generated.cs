@@ -73,6 +73,13 @@ namespace Umbraco.Web.PublishedModels
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ServiceMainImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("serviceMainImage");
 
 		///<summary>
+		/// Service Thumbnail Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("serviceThumbnailImage")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent ServiceThumbnailImage => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("serviceThumbnailImage");
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]

@@ -41,7 +41,7 @@
         </ul>
     </div>
         <div>
-            <input type="submit" id="submit" value="Submit" tabindex="5">
+            <input type="submit" id="submit" value="@(currentCulture.Contains("en") ? "Send" : "Gửi")" tabindex="5">
         </div>
     }
 </div>

@@ -2,7 +2,8 @@
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
-    var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url() : String.Empty;
+    //var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url() : String.Empty;
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
 }
 @section Header{
     <link rel="stylesheet" href="@Url.Content("~/css/homepage.css")" />
@@ -21,7 +22,7 @@
                         <div class="slide-content">
                             <h1>@sliderElement.SlideTitle</h1>
                             <p>@sliderElement.SlideShortContent</p>
-                            <a href="@sliderElement.SlideItemActionLink">View More</a>
+                            <a href="@sliderElement.SlideItemActionLink">@(currentCulture.Contains("en") ? "Send Contact" : "Gửi liên hệ")</a>
                         </div>
                     </div>
                 </div>

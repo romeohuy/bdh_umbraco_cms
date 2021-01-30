@@ -4,43 +4,51 @@
 }
 <div class="side-contact-form">
     <p class="side-form-title">@(currentCulture.Contains("en") ? "Apply Now" : "Gửi ứng tuyển")</p>
-    @using (Html.BeginUmbracoForm("Submit", "ApplyJobForm", FormMethod.Post, htmlAttributes: new { @id = "contact" }))
+    @using (Html.BeginUmbracoForm("Submit", "ApplyJobForm", FormMethod.Post, htmlAttributes: new { @id = "contact", enctype = "multipart/form-data" }))
     {
+    <div>
+        @Html.HiddenFor(m => m.CareerDetailPageId)
+        @Html.ValidationMessage("Summary")
+        <ul>
+            <li>
+                <div>
+                    @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @id = "txt_name", tabindex = "1", placeholder = "Name *" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    @*<input name="name" id="txt_tame" type="text" value="" tabindex="1" placeholder="Name *" aria-required="true" aria-invalid="false">*@
+                </div>
+            </li>
+            <li>
+                <div>
+                    @Html.TextBoxFor(m => m.Phone, htmlAttributes: new { @id = "txt_phone", tabindex = "2", placeholder = "Phone *" })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                    @*<input name="phone" id="txt_phone" type="text" value="" tabindex="2" placeholder="Phone *" aria-required="true" aria-invalid="false">*@
+                </div>
+            </li>
+            <li>
+                <div>
+                    @Html.TextBoxFor(m => m.Email, htmlAttributes: new { @id = "txt_email", tabindex = "3", placeholder = "Email *" })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    @*<input name="email" id="txt_email" type="email" value="" tabindex="3" placeholder="Email *" aria-required="true" aria-invalid="false">*@
+                </div>
+            </li>
+            <li>
+                <div>
+                    @Html.TextAreaFor(m => m.Message, htmlAttributes: new { @id = "txt_message", tabindex = "4", placeholder = "Message *" })
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    @*<textarea name="message" id="txt_message" tabindex="4" placeholder="Message" aria-invalid="false" rows="10" cols="50"></textarea>*@
+                </div>
+            </li>
+            <li>
+                <div>
+                    @Html.TextBoxFor(m => m.AttachmentFiles, htmlAttributes: new { @id = "txt_attachment_files", tabindex = "5", type = "file", multiple = "multiple" })
+                    @Html.ValidationMessageFor(model => model.AttachmentFiles, "", new { @class = "text-danger" })
+                    @*<input name="email" id="txt_email" type="email" value="" tabindex="3" placeholder="Email *" aria-required="true" aria-invalid="false">*@
+                </div>
+            </li>
+        </ul>
+    </div>
         <div>
-            @Html.HiddenFor(m => m.CareerDetailPageId)
-            <ul>
-                <li>
-                    <div>
-                        @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @id = "txt_name", tabindex = "1", placeholder = "Name *" })
-                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                        @*<input name="name" id="txt_tame" type="text" value="" tabindex="1" placeholder="Name *" aria-required="true" aria-invalid="false">*@
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        @Html.TextBoxFor(m => m.Phone, htmlAttributes: new { @id = "txt_phone", tabindex = "2", placeholder = "Phone *" })
-                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                        @*<input name="phone" id="txt_phone" type="text" value="" tabindex="2" placeholder="Phone *" aria-required="true" aria-invalid="false">*@
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        @Html.TextBoxFor(m => m.Email, htmlAttributes: new { @id = "txt_email", tabindex = "3", placeholder = "Email *" })
-                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                        @*<input name="email" id="txt_email" type="email" value="" tabindex="3" placeholder="Email *" aria-required="true" aria-invalid="false">*@
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        @Html.TextAreaFor(m => m.Message, htmlAttributes: new { @id = "txt_message", tabindex = "4", placeholder = "Message *" })
-                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
-                        @*<textarea name="message" id="txt_message" tabindex="4" placeholder="Message" aria-invalid="false" rows="10" cols="50"></textarea>*@
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <input type="submit" id="submit" value="Submit" tabindex="5">
+            <input type="submit" id="submit" value="@(currentCulture.Contains("en") ? "Send" : "Gửi")" tabindex="6">
         </div>
     }
 </div>

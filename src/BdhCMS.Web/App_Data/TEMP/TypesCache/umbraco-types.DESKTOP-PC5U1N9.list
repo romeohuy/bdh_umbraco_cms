@@ -636,3 +636,6 @@ Umbraco.Web.PublishedModels.Products, BdhCMS.Web, Version=1.0.0.0, Culture=neutr
 Umbraco.Web.PublishedModels.ServiceDetail, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.PublishedModels.Services, BdhCMS.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 
+Umbraco.Core.Deploy.IServiceConnector
+
+

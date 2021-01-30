@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="col25">
-        @{ Html.RenderAction("RenderSectionApplyJobForm", "ApplyJobForm"); }
+        @{ Html.RenderAction("RenderSectionApplyJobForm", "ApplyJobForm", new { careerDetailId = Model.Id}); }
     </div>
 </div>
 @Html.Partial("~/views/partials/PartnerList.cshtml", (Home)Model.Root())

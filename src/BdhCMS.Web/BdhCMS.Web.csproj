@@ -344,6 +344,7 @@
     <Content Include="css\umbraco-starterkit-style.css" />
     <Content Include="Global.asax" />
     <Content Include="images\1526eb1943ffa5a1fcee.png" />
+    <Content Include="images\background-email.jpg" />
     <Content Include="images\bdh-icon_152.png" />
     <Content Include="images\bdh-icon_167.png" />
     <Content Include="images\bdh-icon_180.png" />
@@ -2880,6 +2881,8 @@
     <Compile Include="Composing\RegisterServicesComposer.cs" />
     <Compile Include="Controllers\ApplyJobFormController.cs" />
     <Compile Include="Controllers\ContactFormController.cs" />
+    <Compile Include="Helpers\NodeHelper.cs" />
+    <Compile Include="Helpers\RazorViewToStringRenderer.cs" />
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="Models\ApplyJobFormViewModel.cs" />
     <Compile Include="Models\ContactFormViewModel.cs" />
@@ -3043,6 +3046,9 @@
     <Content Include="Views\CareerDetail.cshtml" />
     <Content Include="Views\Careers.cshtml" />
     <Content Include="Views\Partials\ApplyForm.cshtml" />
+    <Content Include="Views\MasterEmailTemplate.cshtml" />
+    <Content Include="Views\Partials\EmailTemplates\ApplyJob.cshtml" />
+    <Content Include="Views\Partials\EmailTemplates\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

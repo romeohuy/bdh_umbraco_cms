@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BdhCMS.Web.Helpers;
+using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.PublishedModels;
 
@@ -13,7 +15,6 @@ namespace BdhCMS.Web.Controllers
     public class ContactFormController : SurfaceController
     {
         private readonly ISmtpService _smtpService;
-
         public ContactFormController(ISmtpService smtpService)
         {
             _smtpService = smtpService;
@@ -39,13 +40,18 @@ namespace BdhCMS.Web.Controllers
                 return CurrentUmbracoPage();
 
             // Work with form data here
-            var result = _smtpService.SendContactToEmail(model);
+            var result = _smtpService.SendContactToEmail(model, GetEmailBody(model));
             if (!string.IsNullOrEmpty(result))
             {
                 ModelState.AddModelError("Summary", result);
                 return CurrentUmbracoPage();
             }
             return RedirectToCurrentUmbracoPage();
+        }
+
+        private string GetEmailBody(ContactFormViewModel model)
+        {
+            return RazorViewToStringRenderer.RenderViewToString(ControllerContext, "~/Views/Partials/EmailTemplates/Contact.cshtml", model, true);
         }
     }
 }
