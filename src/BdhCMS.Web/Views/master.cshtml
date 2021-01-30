@@ -71,7 +71,7 @@
                     <img src="@Url.Content("~/images/header-logo.png")" alt="@home.Sitename">
                 }
             </a>
-           
+
             <ul id="top-nav">
                 <li><img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone : @home.TopHeadPhoneNumber"></li>
                 <li><a href="tel:@(home.TopHeadPhoneNumber)" class="link">@home.TopHeadPhoneNumber</a></li>
@@ -114,6 +114,7 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/scripts/common.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 
