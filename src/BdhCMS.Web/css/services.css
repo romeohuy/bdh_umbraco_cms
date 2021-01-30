@@ -145,7 +145,7 @@
     -webkit-transition: height .5s ease-in-out;
 }
 
-.panel-item.bookeeping{
+/*.panel-item.bookeeping{
     height: 336px;
 }
 
@@ -223,7 +223,7 @@
 
 .panel-item.dissolution{
     height: 252px;
-}
+}*/
 
 .panel-item ul{
     list-style-type:disc;
