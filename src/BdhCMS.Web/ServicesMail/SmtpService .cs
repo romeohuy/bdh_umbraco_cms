@@ -30,13 +30,15 @@ namespace BdhCMS.Web.ServicesMail
                 
                 string title = string.Format(ConfigurationManager.AppSettings["EmailTitle"], model.Name);
 
+                var useDefaultCredentials = bool.Parse(ConfigurationManager.AppSettings["UseDefaultCredentialsMail"]);
+                var enableSsl = bool.Parse(ConfigurationManager.AppSettings["EnableSslMail"]);
                 var smtp = new SmtpClient()
                 {
                     Host = ConfigurationManager.AppSettings["HostMail"],
                     Port = int.Parse(ConfigurationManager.AppSettings["PortMail"]),
-                    EnableSsl = bool.Parse(ConfigurationManager.AppSettings["EnableSslMail"]),
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = bool.Parse(ConfigurationManager.AppSettings["UseDefaultCredentialsMail"]),
+                    EnableSsl = enableSsl,
+                    //DeliveryMethod = SmtpDeliveryMethod.Network,
+                    //UseDefaultCredentials = useDefaultCredentials,
                     Credentials = new NetworkCredential(fromEmail.Address, pass)
                 };
 

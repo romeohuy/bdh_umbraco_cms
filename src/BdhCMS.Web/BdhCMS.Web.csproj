@@ -354,6 +354,9 @@
     <Content Include="images\bdh-icon_32.png" />
     <Content Include="images\bdh-icon_512.png" />
     <Content Include="images\bookkeeping.jpg" />
+    <Content Include="images\emails\body-temlate-email.jpg" />
+    <Content Include="images\emails\footer-template-email.png" />
+    <Content Include="images\emails\header-template-email.png" />
     <Content Include="images\flags\en.png" />
     <Content Include="images\flags\vn.png" />
     <Content Include="images\header-logo.png" />
