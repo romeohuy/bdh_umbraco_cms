@@ -115,6 +115,13 @@ namespace Umbraco.Web.PublishedModels
 		public string FooterHeader => this.Value<string>("footerHeader");
 
 		///<summary>
+		/// Footer Site Link Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("footerSiteLinkTitle")]
+		public string FooterSiteLinkTitle => this.Value<string>("footerSiteLinkTitle");
+
+		///<summary>
 		/// Ha Noi Address Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
@@ -129,6 +136,13 @@ namespace Umbraco.Web.PublishedModels
 		public string HaNoiFooterAddress => this.Value<string>("haNoiFooterAddress");
 
 		///<summary>
+		/// Ha Noi Footer PhoneNumber
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("haNoiFooterPhoneNumber")]
+		public string HaNoiFooterPhoneNumber => this.Value<string>("haNoiFooterPhoneNumber");
+
+		///<summary>
 		/// HCM Address Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
@@ -141,6 +155,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
 		[ImplementPropertyType("hCMFooterAddress")]
 		public string HCmfooterAddress => this.Value<string>("hCMFooterAddress");
+
+		///<summary>
+		/// HCM Footer PhoneNumber
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("hCMFooterPhoneNumber")]
+		public string HCmfooterPhoneNumber => this.Value<string>("hCMFooterPhoneNumber");
 
 		///<summary>
 		/// Hero Background: Spice up the homepage by adding a beautiful photo that relates to your business
@@ -225,6 +246,27 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
 		[ImplementPropertyType("partnerListTitle")]
 		public string PartnerListTitle => this.Value<string>("partnerListTitle");
+
+		///<summary>
+		/// Quang Ngai Address Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("quangNgaiAddressTitle")]
+		public string QuangNgaiAddressTitle => this.Value<string>("quangNgaiAddressTitle");
+
+		///<summary>
+		/// Quang Ngai FooterAddress
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("quangNgaiFooterAddress")]
+		public string QuangNgaiFooterAddress => this.Value<string>("quangNgaiFooterAddress");
+
+		///<summary>
+		/// Quang Ngai Footer PhoneNumber
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("quangNgaiFooterPhoneNumber")]
+		public string QuangNgaiFooterPhoneNumber => this.Value<string>("quangNgaiFooterPhoneNumber");
 
 		///<summary>
 		/// Logo: Optional. If you add a logo it'll be used in the upper left corner instead of the site name. Make sure to use a transparent logo for best results

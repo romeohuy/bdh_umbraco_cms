@@ -141,7 +141,7 @@
 .map-inner{
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 600px;
 }
 
 #map{
@@ -255,7 +255,7 @@
     }
 
     .map{
-        height: 500px;
+        height: 600px;
     }
 
     .map-inner{
@@ -264,8 +264,9 @@
 
     .contact-inner {
         width: 40vw;
-        height: 462px;
+        height: auto;
         top: 22px;
+        margin-bottom: 10px;
     }
     .contact-left, .contact-right{
         width: 53%;

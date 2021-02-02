@@ -323,6 +323,9 @@ ul#top-nav-language li {
     margin-top: -35px;
     margin-right: 10px;
 }
+.nav-link {
+    text-transform: uppercase;
+}
 @media only screen and (min-width:980px) {
     .contact-now {
         text-align: unset;
