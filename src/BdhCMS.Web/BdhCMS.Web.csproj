@@ -2886,6 +2886,7 @@
     <Compile Include="Controllers\ContactFormController.cs" />
     <Compile Include="Helpers\NodeHelper.cs" />
     <Compile Include="Helpers\RazorViewToStringRenderer.cs" />
+    <Compile Include="Helpers\ReCaptchaHelper.cs" />
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="Models\ApplyJobFormViewModel.cs" />
     <Compile Include="Models\ContactFormViewModel.cs" />

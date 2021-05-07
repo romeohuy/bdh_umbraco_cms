@@ -3,9 +3,12 @@ using BdhCMS.Web.ServicesMail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BdhCMS.Web.Helpers;
+using Newtonsoft.Json;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web.Mvc;
 using Umbraco.Web.PublishedModels;
@@ -48,7 +51,35 @@ namespace BdhCMS.Web.Controllers
             }
             return RedirectToCurrentUmbracoPage();
         }
+        private async Task<bool> IsCaptchaValid(string response)
+        {
+            try
+            {
+                var secret = "6LdjqckaAAAAAGY9_LlhjLlvnsvgaT9xla3iaMAu";
+                using (var client = new HttpClient())
+                {
+                    var values = new Dictionary<string, string>
+                    {
+                        {"secret", secret},
+                        {"response", response},
+                        {"remoteip", Request.UserHostAddress}
+                    };
 
+                    var content = new FormUrlEncodedContent(values);
+                    var verify = await client.PostAsync("https://www.google.com/recaptcha/api/siteverify", content);
+                    var captchaResponseJson = await verify.Content.ReadAsStringAsync();
+                    var captchaResult = JsonConvert.DeserializeObject<CaptchaResponseViewModel>(captchaResponseJson);
+                    return captchaResult.Success
+                           && captchaResult.Action == "Submit"
+                           && captchaResult.Score > 0.5;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
         private string GetEmailBody(ContactFormViewModel model)
         {
             return RazorViewToStringRenderer.RenderViewToString(ControllerContext, "~/Views/Partials/EmailTemplates/Contact.cshtml", model, true);

@@ -8,6 +8,14 @@
     <link href="~/css/contact-page.css" rel="stylesheet" />
 }
 
+<script src="https://www.google.com/recaptcha/api.js?render=6LdjqckaAAAAAG2je7EFGkU7tc2xdT8zTEDzui0j"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LdjqckaAAAAAG2je7EFGkU7tc2xdT8zTEDzui0j', { action: 'Submit'}).then(function(token) {
+            $("#GoogleCaptchaToken").val(token);
+        });
+    });
+</script>
 <div class="title mobile">
     <h1>@Model.PageTitle</h1>
 </div>
@@ -59,6 +67,9 @@
             <div class="field">
                 <label for="message">Message<span> *</span></label>
                 <textarea id="message" name="Message" class="input"></textarea>
+            </div>
+            <div class="field">
+                <input type="hidden" name="GoogleCaptchaToken" id="GoogleCaptchaToken"/>
             </div>
         </fieldset>
         <fieldset class="contact-option">
