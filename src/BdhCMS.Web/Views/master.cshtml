@@ -73,14 +73,7 @@
                 }
             </a>
 
-            <ul id="top-nav">
-                <li><img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone : @home.TopHeadPhoneNumber"></li>
-                <li><a href="tel:@(home.TopHeadPhoneNumber)" class="link">@home.TopHeadPhoneNumber</a></li>
-                <li><img src="@Url.Content("~/images/svg/email.svg")" alt="Email : @home.TopHeaderEmailAddress"></li>
-                <li><a href="mailto:@(home.TopHeaderEmailAddress)" class="link link-email">@home.TopHeaderEmailAddress</a></li>
-                <li><a href="@home.TopHeaderFacebookLink" class="link"><img src="@Url.Content("~/images/svg/facebook.svg")"></a></li>
-                <li><a href="@home.TopHeaderLinkedInUrl" class="link"><img src="@Url.Content("~/images/svg/linkedin.svg")"></a></li>
-            </ul>
+
             <ul id="top-nav-language" class='clearfix'>
                 @foreach (var (culture, infos) in Model.Cultures)
                 {
@@ -90,6 +83,15 @@
                         </a>
                     </li>
                 }
+            </ul>
+            <ul id="top-nav">
+                <li class="time-working"><a>@home.TopHeaderWorkingTime</a></li>
+                <li><img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone : @home.TopHeadPhoneNumber"></li>
+                <li><a href="tel:@(home.TopHeadPhoneNumber)" class="link" target="_blank">@home.TopHeadPhoneNumber</a></li>
+                <li><img src="@Url.Content("~/images/svg/email.svg")" alt="Email : @home.TopHeaderEmailAddress"></li>
+                <li><a href="mailto:@(home.TopHeaderEmailAddress)" class="link link-email" target="_blank">@home.TopHeaderEmailAddress</a></li>
+                <li><a href="@home.TopHeaderFacebookLink" class="link" target="_blank"><img src="@Url.Content("~/images/svg/facebook.svg")"></a></li>
+                <li><a href="@home.TopHeaderLinkedInUrl" class="link" target="_blank"><img src="@Url.Content("~/images/svg/linkedin.svg")"></a></li>
             </ul>
             <ul id="main-nav" class='clearfix'>
                 @Html.Partial("~/views/partials/navigation/topNavigation.cshtml")

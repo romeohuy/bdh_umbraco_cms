@@ -66,6 +66,13 @@ namespace Umbraco.Web.PublishedModels
 		public global::System.Web.IHtmlString ContactIntro => this.Value<global::System.Web.IHtmlString>("contactIntro");
 
 		///<summary>
+		/// Contact Phone App
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("contactPhoneApp")]
+		public string ContactPhoneApp => this.Value<string>("contactPhoneApp");
+
+		///<summary>
 		/// Map Coordinates
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]

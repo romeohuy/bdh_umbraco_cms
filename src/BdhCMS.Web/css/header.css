@@ -51,13 +51,18 @@ header .logo img{
 #top-nav{
     margin-left: auto;
     margin-right: auto;
+    float: right;
+    font-size: 12px;
+    text-align: center;
 }
 
 #top-nav li{
     margin: 0 5px;
     float: left;
 }
-
+#top-nav li.time-working {
+    margin-right: 20px;
+}
 /*#top-nav li:nth-child(2){
     margin-right: 0;
 }

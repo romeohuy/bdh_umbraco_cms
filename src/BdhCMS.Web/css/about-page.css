@@ -27,8 +27,16 @@
 .team-members h1.sub-title{
     padding-top: 20px;
 }
-
-.team-members-detail{
+.team-members-detail-wrapper {
+    float: left;
+    display: block;
+    margin: 0 auto;
+}
+.team-members-detail-image {
+    width: 100%;
+    float: left;
+}
+.team-members-detail {
     width: 100%;
     text-align: left;
 }
@@ -62,5 +70,12 @@
     .team-members-detail{
         width: 75%;
         float: right;
+    }
+
+
+    .team-members-detail-image {
+        width: 25%;
+        float: left;
+        padding: 50px 20px;
     }
 }

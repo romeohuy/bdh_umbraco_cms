@@ -43,8 +43,8 @@
     @foreach (var item in Model.FeatureServiceContents)
     {
         <div class="col25">
-            <a href="@item.ActionRedirectUrl">
-                <img src="@item.CoverImageFeature.Url()" alt="@item.FeatureName">
+            <a href="@(item.ActionRedirectUrl?.Url())">
+                <img src="@(item.CoverImageFeature?.Url())" alt="@item.FeatureName">
                 <div class="title">@item.FeatureName</div>
             </a>
             <p>@item.FeatureDetails</p>
@@ -113,22 +113,6 @@
                     }
 
 
-                    <li class="address clearfix">
-                        <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
-                        <div>@Model.HaNoiAddressTitle</div>
-                    </li>
-                    <li class="clearfix">
-                        <div class="content-address">@Model.HaNoiFooterAddress</div>
-                    </li>
-                    @if (!string.IsNullOrEmpty(Model.HaNoiFooterPhoneNumber))
-                    {
-                        <li class="clearfix">
-                            <div>
-                                <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
-                            </div>
-                            <div><a href="tel:@Model.HaNoiFooterPhoneNumber" class="link">@Model.HaNoiFooterPhoneNumber</a></div>
-                        </li>
-                    }
 
                     <li class="address clearfix">
                         <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
@@ -144,6 +128,24 @@
                                 <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
                             </div>
                             <div><a href="tel:@Model.QuangNgaiFooterPhoneNumber" class="link">@Model.QuangNgaiFooterPhoneNumber</a></div>
+                        </li>
+                    }
+
+
+                    <li class="address clearfix">
+                        <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
+                        <div>@Model.HaNoiAddressTitle</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="content-address">@Model.HaNoiFooterAddress</div>
+                    </li>
+                    @if (!string.IsNullOrEmpty(Model.HaNoiFooterPhoneNumber))
+                    {
+                        <li class="clearfix">
+                            <div>
+                                <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
+                            </div>
+                            <div><a href="tel:@Model.HaNoiFooterPhoneNumber" class="link">@Model.HaNoiFooterPhoneNumber</a></div>
                         </li>
                     }
                 </ul>

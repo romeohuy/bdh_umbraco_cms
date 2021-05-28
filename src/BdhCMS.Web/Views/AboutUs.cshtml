@@ -34,16 +34,23 @@
         </div>
     </div>
     <div class="clearfix">
-        <div class="team-members-detail">
-            @foreach (var item in Model.ListMembers)
-            {
-                <h2>@item.MemberFullName</h2>
-                <h3>@item.MemberTitle</h3>
-                <div>
-                    @Html.Raw(item.MemberInfo)
+
+        @foreach (var item in Model.ListMembers)
+        {
+            <div class="team-members-detail-wrapper clearfix">
+                <div class="team-members-detail-image">
+                    <img width="100%" height="auto" src="@(item.MemberAvatar?.Url())"/>
                 </div>
-            }
-        </div>
+                <div class="team-members-detail">
+                    <h2>@item.MemberFullName</h2>
+                    <h3>@item.MemberTitle</h3>
+                    <div>
+                        @Html.Raw(item.MemberInfo)
+                    </div>
+                </div>
+            </div>
+            
+        }
     </div>
     <h1>@Model.OurGoalTitle</h1>
     <div class="clearfix">

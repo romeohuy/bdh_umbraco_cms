@@ -12,7 +12,7 @@
 </script>
 
 <div class="side-contact-form">
-    <p class="side-form-title">@(currentCulture.Contains("en") ? "Send Contact" : "Gửi liên hệ")</p>
+    <p class="side-form-title">@(currentCulture.Contains("en") ? "Free Consultation" : "Tư vấn miễn phí")</p>
     @using (Html.BeginUmbracoForm("Submit", "ContactForm", FormMethod.Post, htmlAttributes: new { @id = "contact" }))
     {
         <div>

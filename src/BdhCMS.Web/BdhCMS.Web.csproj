@@ -440,7 +440,9 @@
     <Content Include="Umbraco\assets\css\rte-content.css" />
     <Content Include="Umbraco\assets\css\umbraco.css" />
     <Content Include="Umbraco\assets\fonts\helveticons\helveticons.svg" />
-    <Content Include="Umbraco\assets\fonts\web.config" />
+    <Content Include="Umbraco\assets\fonts\web.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Umbraco\assets\icons\icon-activity.svg" />
     <Content Include="Umbraco\assets\icons\icon-add.svg" />
     <Content Include="Umbraco\assets\icons\icon-addressbook.svg" />

@@ -115,6 +115,13 @@ namespace Umbraco.Web.PublishedModels
 		public string FooterHeader => this.Value<string>("footerHeader");
 
 		///<summary>
+		/// Footer Hotline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("footerHotline")]
+		public string FooterHotline => this.Value<string>("footerHotline");
+
+		///<summary>
 		/// Footer Site Link Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
@@ -309,6 +316,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
 		[ImplementPropertyType("topHeaderMobileNumber")]
 		public string TopHeaderMobileNumber => this.Value<string>("topHeaderMobileNumber");
+
+		///<summary>
+		/// Top Header Working Time
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.10.1")]
+		[ImplementPropertyType("topHeaderWorkingTime")]
+		public string TopHeaderWorkingTime => this.Value<string>("topHeaderWorkingTime");
 
 		///<summary>
 		/// Top Head Phone Number
