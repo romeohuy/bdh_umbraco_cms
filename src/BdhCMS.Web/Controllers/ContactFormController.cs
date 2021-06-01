@@ -27,9 +27,9 @@ namespace BdhCMS.Web.Controllers
         /// Render partial view form sign up an event on page Event detail view
         /// </summary>
         /// <returns></returns>
-        public ActionResult RenderSectionContactForm()
+        public ActionResult RenderSectionContactForm(int currentPageId = 0)
         {
-            var prevailEvent = Services.ContentService.GetById(CurrentPage.Id);
+            var prevailEvent = (currentPageId > 0 ) ? Services.ContentService.GetById(currentPageId) : Services.ContentService.GetById(CurrentPage.Id);
             var endDateTime = prevailEvent.GetValue<DateTime?>("endDateTime");
             var model = new ContactFormViewModel {ContactPageId = CurrentPage.Id};
 

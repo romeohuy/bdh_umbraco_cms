@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Filter News by category";
+}
+@model BdhCMS.Web.Models.NewsResultModel
+@using Umbraco.Web;
+@{
+    Layout = "~/Views/master.cshtml";
+
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+@section Header{
+    <link href="~/css/services.css" rel="stylesheet" />
+}
+
+<div class="page-title">
+    <div class="container">@Model.PageTitle</div>
+</div>
+<div class="service-list container clearfix">
+    <div class="col75">
+        <div class="introduction">
+            <p>The dedicated team of BDH Advisory is able to provide our client with a broad range of professional services within our one stop solution model.</p>
+        </div>
+
+        @{
+            
+            if (Model.BlogPosts.Count > 0)
+            {
+                foreach (var post in Model.BlogPosts)
+                {
+                    <div class="service clearfix">
+                        <div class="service-hero">
+                            <a href="@post.Url()"><img src="@(post.BlogThumbnailImage?.Url())" alt="@post.PageTitle"></a>
+                        </div>
+
+                        <div class="service-desc">
+                            <a href="@post.Url()" class="service-name">@post.PageTitle</a>
+                            <div class="blogpost-meta">
+                                <b class="blogpost-date">@post.CreateDate.ToShortDateString()</b>
+                            </div>
+                            <div>@post.Excerpt</div>
+                            <div><a href="@post.Url()" class="read-more">@(currentCulture.Contains("en") ? "Read more" : "Chi tiết")</a></div>
+                        </div>
+
+                    </div>
+                }
+            }
+
+            @*if (blogposts.Count > numberOfPosts)
+            {
+                <div class="pagination">
+                    <nav class="nav-bar nav-bar--center">
+                        @if (Model.CurrentPage <= 1)
+                        {
+                            <span class="nav-link nav-link--black nav-link--disabled">Prev</span>
+                        }
+                        else
+                        {
+                            <a class="nav-link nav-link--black" href="@(Model.Content.Url + "?page=" + (page - 1))">Prev</a>
+                        }
+
+                        @for (int i = 1; i <= pageCount; i++)
+                        {
+                            <a class="nav-link nav-link--black @(page == i ? " nav-link--active" : null)" href="@(Model.Content.Url + "?page=" + i)">@i</a>
+                        }
+                        @if (page == pageCount)
+                        {
+                            <span class="nav-link nav-link--black nav-link--disabled">Next</span>
+                        }
+                        else
+                        {
+                            <a class="nav-link nav-link--black" href="@(Model.Content.Url + "?page=" + (page + 1))">Next</a>
+                        }
+
+                    </nav>
+                </div>
+            }*@
+        }
+    </div>
+    <div class="col25">
+        @{ Html.RenderAction("RenderSectionContactForm", "ContactForm" ,new{ currentPageId = Model.CurrentPageId}); }
+    </div>
+</div>

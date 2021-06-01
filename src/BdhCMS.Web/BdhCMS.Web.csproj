@@ -2886,7 +2886,6 @@
     <Compile Include="App_Data\Models\TeamMemberItem.generated.cs" />
     <Compile Include="Composing\RegisterServicesComposer.cs" />
     <Compile Include="Controllers\ApplyJobFormController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ContactFormController.cs" />
     <Compile Include="Helpers\NodeHelper.cs" />
     <Compile Include="Helpers\RazorViewToStringRenderer.cs" />
@@ -2894,6 +2893,7 @@
     <Compile Include="Helpers\StringHelpers.cs" />
     <Compile Include="Models\ApplyJobFormViewModel.cs" />
     <Compile Include="Models\ContactFormViewModel.cs" />
+    <Compile Include="Models\NewsResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesMail\ISmtpService.cs" />
     <Compile Include="ServicesMail\SmtpService .cs" />
@@ -3060,7 +3060,6 @@
     <Content Include="Views\Partials\Navigation\SubNavigationCategoriesBlog.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\News\Filter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3068,7 +3067,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
