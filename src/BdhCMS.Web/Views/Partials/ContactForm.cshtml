@@ -1,0 +1,57 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<BdhCMS.Web.Models.ContactFormViewModel>
+@{
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+<script src="https://www.google.com/recaptcha/api.js?render=6LdjqckaAAAAAG2je7EFGkU7tc2xdT8zTEDzui0j"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LdjqckaAAAAAG2je7EFGkU7tc2xdT8zTEDzui0j', { action: 'Submit'}).then(function(token) {
+            $("#GoogleCaptchaToken").val(token);
+        });
+    });
+</script>
+
+<div class="side-contact-form">
+    <p class="side-form-title">@(currentCulture.Contains("en") ? "Free Consultation" : "Tư vấn miễn phí")</p>
+    @using (Html.BeginUmbracoForm("Submit", "ContactForm", FormMethod.Post, htmlAttributes: new { @id = "contact" }))
+    {
+        <div>
+            @Html.HiddenFor(m => m.ContactPageId)
+            @Html.ValidationMessage("Summary")
+            <ul>
+                <li>
+                    <div>
+                        @Html.TextBoxFor(m => m.Name, htmlAttributes: new { @id = "txt_name", tabindex = "1", placeholder = "Name *" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        @*<input name="name" id="txt_tame" type="text" value="" tabindex="1" placeholder="Name *" aria-required="true" aria-invalid="false">*@
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        @Html.TextBoxFor(m => m.Phone, htmlAttributes: new { @id = "txt_phone", tabindex = "2", placeholder = "Phone *" })
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                        @*<input name="phone" id="txt_phone" type="text" value="" tabindex="2" placeholder="Phone *" aria-required="true" aria-invalid="false">*@
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        @Html.TextBoxFor(m => m.Email, htmlAttributes: new { @id = "txt_email", tabindex = "3", placeholder = "Email *" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        @*<input name="email" id="txt_email" type="email" value="" tabindex="3" placeholder="Email *" aria-required="true" aria-invalid="false">*@
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        @Html.TextAreaFor(m => m.Message, htmlAttributes: new { @id = "txt_message", tabindex = "4", placeholder = "Message *" })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                        @*<textarea name="message" id="txt_message" tabindex="4" placeholder="Message" aria-invalid="false" rows="10" cols="50"></textarea>*@
+                    </div>
+                </li>
+                @Html.HiddenFor(m=>m.GoogleCaptchaToken)
+            </ul>
+        </div>
+        <div>
+            <input type="submit" id="submit" value="@(currentCulture.Contains("en") ? "Send" : "Gửi")" tabindex="5">
+        </div>
+    }
+</div>

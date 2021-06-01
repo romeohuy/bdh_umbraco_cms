@@ -1,0 +1,91 @@
+﻿@inherits UmbracoViewPage<ContentModels.Contact>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var home = (Home)Model.Root();
+}
+@section Header{
+    <link href="~/css/contact-page.css" rel="stylesheet" />
+}
+
+<script src="https://www.google.com/recaptcha/api.js?render=6LdjqckaAAAAAG2je7EFGkU7tc2xdT8zTEDzui0j"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LdjqckaAAAAAG2je7EFGkU7tc2xdT8zTEDzui0j', { action: 'Submit'}).then(function(token) {
+            $("#GoogleCaptchaToken").val(token);
+        });
+    });
+</script>
+<div class="title mobile">
+    <h1>@Model.PageTitle</h1>
+</div>
+<div id="map"></div>
+@using (Html.BeginUmbracoForm("Submit", "ContactForm", FormMethod.Post, htmlAttributes: new {@id = "contact-form", @class= "clearfix" }))
+{
+    <div class="title desktop">
+        <h1>@Model.PageTitle</h1>
+    </div>
+    <div class="contact-info">
+        <div class="clearfix"><span>Tel: </span><a class="link">@home.TopHeadPhoneNumber</a></div>
+        <div class="clearfix"><span>Hotline: </span><a class="link">@home.TopHeadPhoneNumber</a></div>
+        <div class="clearfix"><span>We chat/ Zalo / What’s app/ Viber: </span><a class="link">@Model.ContactPhoneApp</a></div>
+        <div class="clearfix"><span>Email: </span><a href="mailto:@(home.TopHeaderEmailAddress)" class="link">@(home.TopHeaderEmailAddress)</a></div>
+        <div class="clearfix"><span>Facebook: </span><a href="@home.TopHeaderFacebookLink" class="link">BDH Advisory</a></div>
+        <div class="clearfix"><span>Linkedin: </span><a href="@home.TopHeaderLinkedInUrl" class="link">BDH Advisory</a></div>
+        <div class="address-title">
+            @home.HCmaddressTitle
+            <p>@home.HCmfooterAddress</p>
+            <p><span>Phone: @home.HCmfooterPhoneNumber</span></p>
+        </div>
+        <div class="address-title">
+            @home.HaNoiAddressTitle
+            <p>@home.HaNoiFooterAddress</p>
+            <p><span>Phone: @home.HaNoiFooterPhoneNumber</span></p>
+        </div>
+        <div class="address-title">
+            @home.QuangNgaiAddressTitle
+            <p>@home.QuangNgaiFooterAddress</p>
+            <p><span>Phone: @home.QuangNgaiFooterPhoneNumber</span></p>
+        </div>
+    </div>
+    <div class="contact-input">
+        <fieldset>
+            <div class="mobile">
+                <span>Please enter your details below to send us a message</span>
+            </div>
+            <div class="field">
+                <label for="name">Name<span>*</span></label>
+                <input id="name" name="Name" type="text" value=""/>
+            </div>
+            <div class="field">
+                <label for="phone">Phone*</label>
+                <input id="phone" name="Phone" type="phone" value=""/>
+            </div>
+            <div class="field">
+                <label for="email">Email<span>*</span></label>
+                <input id="email" name="Email" type="email" value=""/>
+            </div>
+            <div class="field">
+                <label for="message">Message<span> *</span></label>
+                <textarea id="message" name="Message" class="input"></textarea>
+            </div>
+            <div class="field">
+                <input type="hidden" name="GoogleCaptchaToken" id="GoogleCaptchaToken"/>
+            </div>
+        </fieldset>
+        <fieldset class="contact-option">
+            @*<label class="check_box" for="sign_up">
+                Sign up for latest news and updates.
+            </label>
+            <input id="sign_up" name="sign_up" class="check_box" type="checkbox" value="true"/>*@
+            <button type="submit"><span>Send</span></button>
+        </fieldset>
+    </div>
+}
+@section Scripts{
+    <script src="~/scripts/common.js"></script>
+    <script src="~/scripts/homepage.js"></script>
+    <script src="~/scripts/contact.js"></script>
+    <script src="~/scripts/owl.carousel.min.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAJmIrQpe5L0byXYusa8vxzxX_fJbubiyE&callback=initMap' async defer></script>
+}

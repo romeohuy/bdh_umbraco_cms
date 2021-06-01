@@ -1,0 +1,188 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    //var backgroundImage = Model.HeroBackgroundImage != null ? Model.HeroBackgroundImage.Url() : String.Empty;
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+@section Header{
+    <link rel="stylesheet" href="@Url.Content("~/css/homepage.css")" />
+    <link href="~/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/css/owl.theme.default.css" rel="stylesheet" />
+    <link href="~/css/slider-home.css" rel="stylesheet" />
+}
+<div id="home-slider">
+    <div class="homepage-slide owl-carousel owl-theme">
+        @{
+            var index = 1;
+            foreach (var sliderElement in Model.HomeSliderItems.ToList())
+            {
+                <div class="slide-item slide-item-@(index)">
+                    <div class="item-inner container">
+                        <div class="slide-content">
+                            <h1>@sliderElement.SlideTitle</h1>
+                            <p>@sliderElement.SlideShortContent</p>
+                            <a href="@sliderElement.SlideItemActionLink">@(currentCulture.Contains("en") ? "View Detail" : "Chi tiết")</a>
+                        </div>
+                    </div>
+                </div>
+                index++;
+            }
+        }
+    </div>
+</div>
+<div class="contact-now">
+    <div class="container clearfix">
+        <div class="message">@Model.HeroHeader</div>
+        <div class="button">
+            <a href="@Model.HeroCtalink.Url()">@Model.HeroCtacaption</a>
+        </div>
+    </div>
+</div>
+<div class="services clearfix">
+    @foreach (var item in Model.FeatureServiceContents)
+    {
+        <div class="col25">
+            <a href="@(item.ActionRedirectUrl?.Url())">
+                <img src="@(item.CoverImageFeature?.Url())" alt="@item.FeatureName">
+                <div class="title">@item.FeatureName</div>
+            </a>
+            <p>@item.FeatureDetails</p>
+        </div>
+    }
+</div>
+<div class="introduction">
+    <div class="container clearfix">
+        <div class="content col50">
+            <h1>@Model.HomeAboutTitle</h1>
+            <div>@Html.Raw(Model.HomeAboutDetails)</div>
+        </div>
+        <div class="col50">
+            <img src="@Model.HomeAboutRightImage.Url()">
+        </div>
+    </div>
+</div>
+@Html.Partial("~/views/partials/PartnerList.cshtml",Model)
+<div class="news">
+    <div class="container">
+        <h1>@Model.LatestNewsTitle</h1>
+        <div class="clearfix">
+            @Html.GetGridHtml(Model, "bodyText", "bootstrap3-fluid")
+        </div>
+    </div>
+</div>
+<div class="map">
+    <div class="map-inner">
+        <div id="map"></div>
+    </div>
+    <div class="contact container">
+        <div class="contact-inner clearfix">
+            <div class="contact-left">
+                <h2>@Model.FooterContactTitle</h2>
+                <ul>
+                    <li class="clearfix">
+                        <div>
+                            <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
+                        </div>
+                        <div><a href="tel:@Model.TopHeadPhoneNumber" class="link">@Model.TopHeadPhoneNumber</a></div>
+                    </li>
+                    <li class="clearfix">
+                        <div><img src="@Url.Content("~/images/svg/mobile.svg")" alt="Mobile"></div>
+                        <div><a href="tel:@Model.TopHeaderMobileNumber" class="link">@Model.TopHeaderMobileNumber</a></div>
+                    </li>
+                    <li class="clearfix">
+                        <div><img src="@Url.Content("~/images/svg/email.svg")" alt="Email"></div>
+                        <div><a href="mailto:@(Model.TopHeaderEmailAddress)" class="link">@Model.TopHeaderEmailAddress</a></div>
+                    </li>
+                    <li class="address clearfix">
+                        <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
+                        <div>@Model.HCmaddressTitle</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="content-address">@Model.HCmfooterAddress</div>
+                    </li>
+
+                    @if (!string.IsNullOrEmpty(Model.HCmfooterPhoneNumber))
+                    {
+                        <li class="clearfix">
+                            <div>
+                                <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
+                            </div>
+                            <div><a href="tel:@Model.HCmfooterPhoneNumber" class="link">@Model.HCmfooterPhoneNumber</a></div>
+                        </li>
+                    }
+
+
+
+                    <li class="address clearfix">
+                        <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
+                        <div>@Model.QuangNgaiAddressTitle</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="content-address">@Model.QuangNgaiFooterAddress</div>
+                    </li>
+                    @if (!string.IsNullOrEmpty(Model.QuangNgaiFooterPhoneNumber))
+                    {
+                        <li class="clearfix">
+                            <div>
+                                <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
+                            </div>
+                            <div><a href="tel:@Model.QuangNgaiFooterPhoneNumber" class="link">@Model.QuangNgaiFooterPhoneNumber</a></div>
+                        </li>
+                    }
+
+
+                    <li class="address clearfix">
+                        <div><img src="@Url.Content("~/images/svg/location.svg")" alt="Location"></div>
+                        <div>@Model.HaNoiAddressTitle</div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="content-address">@Model.HaNoiFooterAddress</div>
+                    </li>
+                    @if (!string.IsNullOrEmpty(Model.HaNoiFooterPhoneNumber))
+                    {
+                        <li class="clearfix">
+                            <div>
+                                <img src="@Url.Content("~/images/svg/phone.svg")" alt="Phone">
+                            </div>
+                            <div><a href="tel:@Model.HaNoiFooterPhoneNumber" class="link">@Model.HaNoiFooterPhoneNumber</a></div>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="contact-right">
+                <h2>SITE LINK</h2>
+                <ul>
+                    @{
+                        var footerMenu = Model.Root().Children.Where(x => x.IsVisible());
+                        foreach (var item in footerMenu)
+                        {
+                            if (item.Children().Any() && item.GetType() == typeof(Services))
+                            {
+                                <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+
+                                var siteSectionFooter = item.AncestorOrSelf(2);
+                                var selectionFooters = siteSectionFooter.Children.Where(x => x.IsVisible());
+                                foreach (var itemContent in selectionFooters)
+                                {
+                                    <li><a class="link nav-link" href="@itemContent.Url()"><span>@itemContent.Name</span></a></li>
+                                }
+                            }
+                            else
+                            {
+                                <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/scripts/homepage.js"></script>
+    <script src="~/scripts/contact.js"></script>
+    <script src="~/scripts/owl.carousel.min.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAJmIrQpe5L0byXYusa8vxzxX_fJbubiyE&callback=initMap' async defer></script>
+}

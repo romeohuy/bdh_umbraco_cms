@@ -1,0 +1,25 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web;
+@{
+    var site = Model.Root();
+    var selection = site.Children.Where(x => x.IsVisible());
+}
+<!-- comment out the following line if you want to remove the root node name from the top navigation -->
+<li><a class="nav-link @Html.Raw(Model.Id == site.Id ? "navi-link--active" : "")" href="@site.Url()">@site.Name</a></li>
+@foreach (var item in selection)
+{
+    if (item.Children().Any() && item.GetType() == typeof(Services))
+    {
+        <li class="has-sub">
+            <a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a>
+            <ul class="sub-menu">
+                @Html.Partial("~/views/partials/navigation/SubNavigation.cshtml", item)
+            </ul>
+        </li>
+    }
+    else
+    {
+        <li><a class="link nav-link @(item.IsAncestorOrSelf(Model) ? "nav-link--active" : null)" href="@item.Url()">@item.Name</a></li>
+    }
+
+}

@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web;
+@{
+    var siteSection = Model.AncestorOrSelf(2);
+    var selection = siteSection.Children.Where(x => x.IsVisible());
+    var tags = new List<string>();
+    foreach (var item in selection)
+    {
+        try
+        {
+            if (item is Blogpost blog && blog.Categories.Any())
+            {
+                tags.AddRange(blog.Categories.ToList());
+            }
+        }
+        catch (Exception e)
+        {
+            continue;
+        }
+    }
+}
+
+@foreach (var item in tags.Distinct())
+{
+    <li><a class="link nav-link  href="@Url.Action("")">@item.Name</a></li>
+}

@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Services>
+@using Umbraco.Core.Services
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+@section Header{
+    <link href="~/css/services.css" rel="stylesheet" />
+}
+@* the fun starts here *@
+<div class="page-title">
+    <div class="container">@Model.PageTitle</div>
+</div>
+<div class="service-list container clearfix">
+    <div class="col75">
+        <div class="introduction">
+            <p>@Model.ServiceIntro</p>
+        </div>
+        @foreach (var item in Model.Children<ServiceDetail>().ToList())
+        {
+            <div class="service clearfix">
+                <div class="service-hero">
+                    <a href="@item.Url()"><img src="@(item.ServiceThumbnailImage?.Url())" alt="@item.PageTitle"></a>
+                </div>
+                <div class="service-desc">
+                    <a href="@item.Url()" class="service-name">@item.PageTitle</a>
+                    <p>@item.ServiceExcerpt</p>
+                    <div><a href="@item.Url()" class="read-more">@(currentCulture.Contains("en") ? "Read more" : "Chi tiết")</a></div>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="col25">
+        @{ Html.RenderAction("RenderSectionContactForm", "ContactForm"); }
+    </div>
+</div>
+
+@Html.Partial("~/views/partials/PartnerList.cshtml", (Home)Model.Root())

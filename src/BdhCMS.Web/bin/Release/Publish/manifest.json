@@ -1,0 +1,25 @@
+{
+  "short_name": "BDH Advisory",
+  "name": "bdh.com.vn",
+  "icons": [
+    {
+      "src": "/images/bdh-icon_192_tran.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/bdh-icon_256.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/images/bdh-icon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#dddddd",
+  "display": "standalone",
+  "theme_color": "#333333"
+}

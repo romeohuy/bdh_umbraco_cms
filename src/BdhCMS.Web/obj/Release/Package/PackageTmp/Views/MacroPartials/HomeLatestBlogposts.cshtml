@@ -1,0 +1,69 @@
+﻿@using Umbraco.Core.Services
+@using ContentModels = Umbraco.Web.PublishedModels;
+
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var startNodeId = Model.MacroParameters["startNodeId"] != null ? Model.MacroParameters["startNodeId"] : Model.Content.Id;
+
+
+    var numberOfPosts = 3;
+    if (Model.MacroParameters["numberOfPosts"] != null)
+    {
+        int.TryParse((string)Model.MacroParameters["numberOfPosts"], out numberOfPosts);
+    }
+
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+@if (startNodeId != null)
+{
+    @* Get the starting page *@
+    var startNode = Umbraco.Content(startNodeId);
+
+    if (startNode == null)
+    {
+        <div class="blogposts">
+            <h1>There are no posts at this time, try again later.</h1>
+        </div>
+
+        return;
+    }
+
+    //Gets all blogposts to calculate pages
+    var blogposts = startNode.Children.OrderBy(x => x.CreateDate).ToList();
+    var pageCount = (int)Math.Ceiling((double)blogposts.Count / (double)numberOfPosts);
+    //gets the page from the querystring and sets it to one if it is out of range
+    var page = 1;
+    if (!string.IsNullOrEmpty(Request.QueryString["page"]))
+    {
+        int.TryParse(Request.QueryString["page"], out page);
+        if (page <= 0 || page > pageCount)
+        {
+            page = 1;
+        }
+    }
+    //Gets the blogposts for the current page
+    var pagedBlogposts = blogposts.Skip((page - 1) * numberOfPosts).Take(numberOfPosts).ToList();
+
+    if (pagedBlogposts.Count > 0)
+    {
+        <div class="blogposts">
+
+            @foreach (ContentModels.Blogpost post in pagedBlogposts)
+            {
+                <div class="col50">
+                    <div class="description">
+                        <h2>@post.PageTitle</h2>
+                        <b>@post.CreateDate.ToShortDateString()</b>
+                        <div>
+                            @post.Excerpt
+                        </div>
+                        <p>
+                            <a href="@post.Url">@(currentCulture.Contains("en") ? "Read more" : "Chi tiết")</a>
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+}
+
