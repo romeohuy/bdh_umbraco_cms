@@ -1,0 +1,352 @@
+/*
+ * Copyright (c) 2016 Ngan Thinh Phat Co.,LTD
+ */
+body {
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Muli', sans-serif;
+    font-style:normal;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+    line-height: normal;
+}
+
+ul, li, h1, h2, h3, p, table, th, td, tr, fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+table, th, td, tr{
+    border-spacing: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+ul, li, h1, h2, h3, img, a, div, select, input, header, footer {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+input {
+    outline: none;
+    font-family: 'Muli', sans-serif;
+}
+
+select, button{
+    font-family: 'Muli', sans-serif;
+}
+
+main{
+    min-height: 80vh;
+}
+
+#main-nav > li > a.navi-link--active {
+    color: #f78312;
+}
+
+
+footer{
+    background-color: #ddd;
+}
+
+form{
+    outline: none;
+}
+
+img{
+    width: 100%;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 3vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.select {
+    background: #fff;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.select select {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    line-height: 1;
+    padding-left: 15px;
+    z-index: 99;
+    position: relative;
+}
+
+.select:after {
+    content: url(../images/svg/arrow-down.svg);
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    width: 9px;
+    transform: translate(0%, -50%);
+}
+
+.select-value {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translate(0%, -50%);
+    z-index: 1;
+    text-transform: uppercase;
+    color: #505050;
+}
+
+.filter-section .select-replace:after {
+    right: 15px;
+}
+
+#btn-back-to-top{
+    height: 30px;
+    width: 30px;
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+#btn-back-to-top:after{
+    content: url("../images/svg/back-to-top.svg");
+    color: #505050;
+}
+
+.product-main {
+    position: relative;
+    display: block;
+}
+
+.thumb{
+    width: 100%;
+    transition: opacity 300ms ease-in;
+}
+
+.product-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: none;
+}
+
+.product-main:hover .product-overlay{
+    display: block;
+}
+
+.product-name {
+    margin-top: 10px;
+}
+
+.product-name a{
+    text-transform: uppercase;
+}
+
+.button-detail{
+    bottom:10px;
+    left: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+.button-detail button {
+    background: #333;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.66667;
+    letter-spacing: 1px;
+    color: #ebebeb;
+    padding: 13px 30px;
+    cursor: pointer;
+    transition: all .2s;
+    border: 0;
+    width: 100%;
+}
+
+.contact-now{
+    background-color: #f78312;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.contact-now .message{
+    display: inline-block;
+}
+
+.contact-now .button{
+    margin-top: 31px;
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    height: 48px;
+    line-height: 44px;
+    color: #fff;
+    background: none;
+    border: 2px solid #ffffff;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.contact-now .button a{    
+    color: #fff;
+}
+
+.contact-now .button:before {
+    bottom: 100%;
+    left: 50%;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border: 11px solid rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    margin-left: -11px;
+}
+
+.page-title{
+    height: auto;
+    /*background-image: url("/images/page-title.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 0 0 10px #AAA;*/
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Fira Sans',sans-serif;
+    color: #4D4D4D;
+}
+
+.member{
+    padding: 40px 0;
+    background: #EBEBEB;
+    text-align: center;
+}
+
+.member h1{
+    text-align: center;
+}
+
+.member-icon{
+    margin-top: 20px;
+    display: inline-block;
+    margin: 0 20px;
+    margin-top: 20px;
+}
+
+.member-icon img{
+    height: 80px;
+    width: auto;
+}
+.pagination nav{
+    text-align:center;
+}
+.pagination nav a, .pagination nav span {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f78312;
+    color:whitesmoke;
+}
+    .pagination nav a.nav-link--active {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #f74a12;
+        color: white !important;
+        font-weight: bold;
+    }
+.nav-link--active {
+    color: #f78312 !important;
+}
+ul#top-nav-language {
+    float: right;
+    list-style: none;
+    display: block;
+    margin-left: 20px;
+    margin-right: auto;
+}
+ul#top-nav-language li {
+    display: inline-block;
+    float: left;
+    padding: 12px 10px 0 0;
+    width: 30px;
+    margin: 0 5px 0 5px;
+}
+ul#top-nav-language li img {
+    width: 30px;
+}
+    .text-danger {
+        color: red;
+        float: right;
+        margin-top: -35px;
+        margin-right: 10px;
+    }
+.nav-link {
+    text-transform: uppercase;
+}
+@media only screen and (min-width:980px) {
+    .contact-now {
+        text-align: unset;
+        padding: 0;
+    }
+
+    .contact-now .button {
+        float: right;
+    }
+
+    .contact-now .message {
+        float: left;
+        line-height: 110px;
+    }
+}
+@media only screen and (max-width: 980px) {
+    .sub-menu {
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_bZF3gbD_u50.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face{
+    font-family:"Awesome";
+    font-style:normal;
+    font-weight:900;
+    font-display:block;
+    src:url(../fonts/fa-solid-900.woff) format("woff"), url(../fonts/fa-solid-900.woff2) format("woff2");
+}
+
+.fa,.fas{
+    font-family:"Awesome";
+    font-weight:900;
+}

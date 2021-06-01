@@ -1,0 +1,110 @@
+﻿@using Umbraco.Core.Services
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Web;
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    var startNodeId = Model.MacroParameters["startNodeId"] != null ? Model.MacroParameters["startNodeId"] : Model.Content.Id;
+
+    
+    var numberOfPosts = 3;
+    if (Model.MacroParameters["numberOfPosts"] != null)
+    {
+        int.TryParse((string)Model.MacroParameters["numberOfPosts"], out numberOfPosts);
+    }
+
+    var currentCulture = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+}
+@if (startNodeId != null)
+{
+    @* Get the starting page *@
+    var startNode = Umbraco.Content(startNodeId);
+
+    if (startNode == null)
+    {
+        <div class="blogposts">
+            <h1>There are no posts at this time, try again later.</h1>
+        </div>
+
+        return;
+    }
+
+    //Gets all blogposts to calculate pages
+    var blogposts = startNode.Children.OrderBy(x => x.CreateDate).ToList();
+    var categoryName = string.Empty;
+    if (Request.QueryString.AllKeys.Any(q=> q.Equals("cate")))
+    {
+        categoryName = Request.QueryString["cate"];
+        if (categoryName.IsNullOrWhiteSpace() == false)
+        {
+            blogposts = blogposts.Cast<Blogpost>().Where(_ => _.Categories.Contains(categoryName)).ToList<IPublishedContent>();
+        }
+    }
+
+    var pageCount = (int)Math.Ceiling((double)blogposts.Count / (double)numberOfPosts);
+    //gets the page from the querystring and sets it to one if it is out of range
+    var page = 1;
+    if (!string.IsNullOrEmpty(Request.QueryString["page"]))
+    {
+        int.TryParse(Request.QueryString["page"], out page);
+        if (page <= 0 || page > pageCount)
+        {
+            page = 1;
+        }
+    }
+    //Gets the blogposts for the current page
+    var pagedBlogposts = blogposts.Skip((page - 1) * numberOfPosts).Take(numberOfPosts).ToList();
+
+    if (pagedBlogposts.Count > 0)
+    {
+        foreach (ContentModels.Blogpost post in pagedBlogposts)
+        {
+            <div class="service clearfix">
+                <div class="service-hero">
+                    <a href="@post.Url()"><img src="@(post.BlogThumbnailImage?.Url())" alt="@post.PageTitle"></a>
+                </div>
+                
+                <div class="service-desc">
+                    <a href="@post.Url()" class="service-name">@post.PageTitle</a>
+                    <div class="blogpost-meta">
+                        <b class="blogpost-date">@post.CreateDate.ToShortDateString()</b>
+                    </div>
+                    <div>@post.Excerpt</div>
+                    <div><a href="@post.Url()" class="read-more">@(currentCulture.Contains("en") ? "Read more" : "Chi tiết")</a></div>
+                </div>
+
+            </div>
+        }
+    }
+
+    if (blogposts.Count > numberOfPosts)
+    {
+        <div class="pagination">
+            <nav class="nav-bar nav-bar--center">
+                @if (page <= 1)
+                {
+                    <span class="nav-link nav-link--black nav-link--disabled">Prev</span>
+                }
+                else
+                {
+                    <a class="nav-link nav-link--black" href="@(Model.Content.Url +  $"?cate={categoryName}page=" + (page - 1))">Prev</a>
+                }
+
+                @for (int i = 1; i <= pageCount; i++)
+                {
+                    <a class="nav-link nav-link--black @(page == i ? " nav-link--active" : null)" href="@(Model.Content.Url +  $"?cate={categoryName}page=" + i)">@i</a>
+                }
+
+                @if (page == pageCount)
+                {
+                    <span class="nav-link nav-link--black nav-link--disabled">Next</span>
+                }
+                else
+                {
+                    <a class="nav-link nav-link--black" href="@(Model.Content.Url + $"?cate={categoryName}page=" + (page + 1))">Next</a>
+                }
+
+            </nav>
+        </div>
+    }
+}
+

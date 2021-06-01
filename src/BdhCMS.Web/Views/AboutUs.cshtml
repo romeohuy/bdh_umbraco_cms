@@ -1,0 +1,67 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.AboutUs>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    var home = (Home)Model.Root();
+    Layout = "master.cshtml";
+}
+@section Header{
+    <link href="~/css/about-page.css" rel="stylesheet" />
+    <link href="~/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/css/owl.theme.default.css" rel="stylesheet" />
+    <link href="~/css/slider-home.css" rel="stylesheet" />
+}
+@* the fun starts here *@
+<div class="page-title">
+    <div class="container">@Model.PageTitle</div>
+</div>
+<div class="container introduction clearfix">
+    <div>
+        @Html.Raw(Model.AboutUsDescription)
+    </div>
+</div>
+<div class="contact-now">
+    <div class="container clearfix">
+        <div class="message">@home.HeroHeader</div>
+        <div class="button">
+            <a href="@home.HeroCtalink.Url()">@home.HeroCtacaption</a>
+        </div>
+    </div>
+</div>
+<div class="team-members container clearfix">
+    <div class="title-outer clearfix">
+        <div class="title">
+            <h1>@Model.OurMembersTitle</h1>
+        </div>
+    </div>
+    <div class="clearfix">
+
+        @foreach (var item in Model.ListMembers)
+        {
+            <div class="team-members-detail-wrapper clearfix">
+                <div class="team-members-detail-image">
+                    <img width="100%" height="auto" src="@(item.MemberAvatar?.Url())"/>
+                </div>
+                <div class="team-members-detail">
+                    <h2>@item.MemberFullName</h2>
+                    <h3>@item.MemberTitle</h3>
+                    <div>
+                        @Html.Raw(item.MemberInfo)
+                    </div>
+                </div>
+            </div>
+            
+        }
+    </div>
+    <h1>@Model.OurGoalTitle</h1>
+    <div class="clearfix">
+        <div class="team-members-detail">
+            @Html.Raw(Model.OurGoalDescription)
+        </div>
+    </div>
+</div>
+
+@Html.Partial("~/views/partials/PartnerList.cshtml", (Home)Model.Root())
+
+@section Scripts{
+
+}
